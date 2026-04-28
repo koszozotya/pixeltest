@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel & Co. — Websites for Small Businesses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f0e8;
+      --ink: #1a1410;
+      --rust: #c9521e;
+      --sand: #e8ddc8;
+      --moss: #3d5a47;
+      --gold: #c8a84b;
+      --light-rust: #f0ddd5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--rust);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s, height 0.2s, background 0.2s;
+      mix-blend-mode: multiply;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--rust);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s ease, width 0.3s, height 0.3s;
+    }
+    body:hover .cursor { opacity: 1; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.6rem 3rem;
+      background: transparent;
+      transition: background 0.4s;
+    }
+    nav.scrolled { background: var(--cream); border-bottom: 1px solid var(--sand); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--rust); }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; color: var(--ink); font-weight: 500;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: var(--rust);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--ink); color: var(--cream) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--rust); color: var(--cream) !important; transition: background 0.2s; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: -10%; right: -5%;
+      width: 55vw; height: 110vh;
+      background: var(--sand);
+      clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 0;
+    }
+
+    .hero-text { position: relative; z-index: 1; padding-right: 3rem; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rust); font-weight: 500; margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 28px; height: 1px; background: var(--rust);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+    h1 em { font-style: italic; color: var(--rust); }
+
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.75;
+      color: #5a4f44; max-width: 420px;
+      margin-bottom: 2.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; align-items: center;
+      opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--rust); color: var(--cream);
+      padding: 1rem 2.2rem; border-radius: 2px;
+      font-size: 0.88rem; letter-spacing: 0.05em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--ink); font-size: 0.88rem; letter-spacing: 0.05em;
+      text-transform: uppercase; font-weight: 500; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .btn-ghost:hover { gap: 0.9rem; }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; z-index: 1;
+      display: flex; justify-content: center; align-items: center;
+      opacity: 0; animation: fadeIn 1s 0.5s forwards;
+    }
+
+    .hero-mockup {
+      width: 100%; max-width: 480px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 40px 100px rgba(26,20,16,0.18), 0 8px 24px rgba(26,20,16,0.08);
+      overflow: hidden;
+    }
+    .mockup-bar {
+      background: #f0ece6; padding: 0.7rem 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 1px solid #e2ddd5;
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-dot:nth-child(1) { background: #ff6057; }
+    .mockup-dot:nth-child(2) { background: #ffbd2e; }
+    .mockup-dot:nth-child(3) { background: #27c93f; }
+    .mockup-url {
+      flex: 1; background: white; border-radius: 20px;
+      padding: 0.28rem 0.8rem; font-size: 0.72rem; color: #888;
+      font-family: monospace; margin-left: 0.5rem;
+    }
+
+    .mockup-body { padding: 1.5rem; }
+    .mockup-hero-img {
+      width: 100%; height: 140px; background: linear-gradient(135deg, var(--moss) 0%, #2a3d32 100%);
+      border-radius: 4px; margin-bottom: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mockup-hero-img span {
+      color: rgba(255,255,255,0.9); font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-style: italic;
+    }
+    .mockup-h { height: 10px; background: #1a1410; border-radius: 3px; width: 55%; margin-bottom: 0.6rem; }
+    .mockup-p { height: 7px; background: #ddd; border-radius: 3px; margin-bottom: 0.4rem; }
+    .mockup-p.w80 { width: 80%; }
+    .mockup-p.w60 { width: 60%; }
+    .mockup-btn { width: 110px; height: 30px; background: var(--rust); border-radius: 2px; margin-top: 1rem; }
+
+    .mockup-cards {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 1.2rem;
+    }
+    .mockup-card { background: var(--sand); border-radius: 4px; padding: 0.7rem; }
+    .mockup-card-icon { width: 22px; height: 22px; background: var(--rust); border-radius: 3px; margin-bottom: 0.4rem; opacity: 0.7; }
+    .mockup-card-line { height: 6px; background: #c8b9a4; border-radius: 2px; margin-bottom: 0.3rem; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--ink); color: var(--cream);
+      padding: 0.9rem 0; overflow: hidden; white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-flex; gap: 3rem;
+      animation: ticker 20s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .ticker-dot { width: 5px; height: 5px; background: var(--rust); border-radius: 50%; flex-shrink: 0; }
+
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* STATS */
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      padding: 5rem 3rem; gap: 2px; background: var(--sand);
+    }
+    .stat {
+      background: var(--cream); padding: 3rem 2.5rem;
+      border-left: 1px solid var(--sand);
+    }
+    .stat:first-child { border-left: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      font-weight: 900; color: var(--rust); line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label { font-size: 0.85rem; color: #7a6e64; letter-spacing: 0.04em; }
+
+    /* SERVICES */
+    .services { padding: 7rem 3rem; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rust); font-weight: 500; margin-bottom: 1.2rem;
+    }
+    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--rust); }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .services-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+    .services-sub { font-size: 1rem; line-height: 1.8; color: #5a4f44; max-width: 380px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--sand); }
+
+    .service-card {
+      background: var(--cream); padding: 2.8rem 2.4rem;
+      position: relative; overflow: hidden;
+      transition: background 0.3s;
+    }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px; background: var(--rust);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { background: #faf7f2; }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--sand); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.5rem;
+    }
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .service-desc { font-size: 0.9rem; line-height: 1.7; color: #6a5f55; }
+    .service-num {
+      position: absolute; top: 1.5rem; right: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; font-weight: 900;
+      color: var(--sand); line-height: 1;
+    }
+
+    /* PROCESS */
+    .process { background: var(--ink); color: var(--cream); padding: 7rem 3rem; }
+    .process h2 { color: var(--cream); }
+    .process .section-label { color: var(--gold); }
+    .process .section-label::before { background: var(--gold); }
+
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; }
+    .step { position: relative; }
+    .step-line {
+      position: absolute; top: 22px; left: calc(100% - 0px); right: -2rem;
+      height: 1px; background: #333; z-index: 0;
+    }
+    .step:last-child .step-line { display: none; }
+
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--rust);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--rust); font-size: 1rem;
+      margin-bottom: 1.5rem; position: relative; z-index: 1;
+      background: var(--ink);
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .step-desc { font-size: 0.88rem; line-height: 1.7; color: #a89f96; }
+
+    /* PRICING */
+    .pricing { padding: 7rem 3rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+
+    .pricing-card {
+      padding: 2.8rem 2.4rem; border: 1.5px solid var(--sand);
+      border-radius: 4px; position: relative; transition: border-color 0.3s, transform 0.3s;
+    }
+    .pricing-card:hover { border-color: var(--rust); transform: translateY(-6px); }
+    .pricing-card.featured {
+      background: var(--ink); color: var(--cream);
+      border-color: var(--ink);
+    }
+    .pricing-card.featured:hover { border-color: var(--rust); }
+
+    .plan-badge {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 500; color: var(--rust); margin-bottom: 1rem; display: block;
+    }
+    .featured .plan-badge { color: var(--gold); }
+    .featured-label {
+      position: absolute; top: -12px; right: 1.5rem;
+      background: var(--rust); color: white;
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.25rem 0.8rem; border-radius: 20px;
+    }
+
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem;
+    }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; line-height: 1;
+      color: var(--rust); margin-bottom: 0.3rem;
+    }
+    .featured .plan-price { color: var(--gold); }
+    .plan-price sup { font-size: 1.5rem; vertical-align: top; margin-top: 0.5rem; }
+    .plan-period { font-size: 0.82rem; color: #a89f96; margin-bottom: 1.8rem; }
+    .featured .plan-period { color: #8a7f76; }
+
+    .plan-features { list-style: none; margin-bottom: 2.2rem; }
+    .plan-features li {
+      padding: 0.55rem 0; border-bottom: 1px solid var(--sand);
+      font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .featured .plan-features li { border-bottom-color: #2a2520; }
+    .plan-features li::before { content: '✓'; color: var(--rust); font-weight: 700; flex-shrink: 0; }
+    .featured .plan-features li::before { color: var(--gold); }
+
+    .btn-plan {
+      display: block; text-align: center;
+      padding: 0.9rem; border-radius: 2px;
+      font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; transition: all 0.2s;
+    }
+    .btn-plan-outline {
+      border: 1.5px solid var(--ink); color: var(--ink);
+    }
+    .btn-plan-outline:hover { background: var(--ink); color: var(--cream); }
+    .btn-plan-solid { background: var(--rust); color: white; }
+    .btn-plan-solid:hover { background: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--light-rust); padding: 7rem 3rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+    .testimonial {
+      background: white; padding: 2.5rem;
+      border-radius: 4px;
+    }
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; line-height: 1; color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-text { font-size: 0.95rem; line-height: 1.75; color: #4a4040; margin-bottom: 1.5rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--sand); overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; color: var(--rust);
+    }
+    .testimonial-name { font-weight: 500; font-size: 0.9rem; }
+    .testimonial-biz { font-size: 0.8rem; color: #8a7f76; }
+
+    /* CTA */
+    .cta-section {
+      padding: 8rem 3rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--light-rust) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .cta-section > * { position: relative; z-index: 1; }
+    .cta-section h2 { max-width: 700px; margin: 0 auto 1.5rem; }
+    .cta-section p { font-size: 1.05rem; color: #6a5f55; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.75; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); color: var(--cream);
+      padding: 4rem 3rem 2rem;
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.9rem; color: #8a7f76; line-height: 1.7; margin-top: 1rem; max-width: 280px; }
+    .footer-col h4 {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a { color: #a89f96; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid #2a2520;
+      padding-top: 2rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { font-size: 0.82rem; color: #6a5f55; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8rem; }
+      .hero::before { display: none; }
+      .hero-visual { display: none; }
+      .stats, .services-intro, .process-steps, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero, .services, .pricing, .testimonials, .process, .cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Pixel <span>&</span> Co.</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Web Design for Small Business</div>
+      <h1>Your business <em>deserves</em> a site that works</h1>
+      <p class="hero-sub">We build beautiful, fast, and conversion-ready websites that help small businesses stand out, get found, and grow — without the agency price tag.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn-primary">See Packages</a>
+        <a href="#process" class="btn-ghost">How it works →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-url">yoursmallbusiness.com</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-hero-img"><span>Welcome to Our Shop</span></div>
+          <div class="mockup-h"></div>
+          <div class="mockup-p w80"></div>
+          <div class="mockup-p w60"></div>
+          <div class="mockup-btn"></div>
+          <div class="mockup-cards">
+            <div class="mockup-card">
+              <div class="mockup-card-icon"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:70%"></div>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-icon" style="opacity:0.5"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:50%"></div>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-icon" style="opacity:0.3"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner" id="ticker">
+      <span class="ticker-item"><span class="ticker-dot"></span> Custom Design</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Mobile Optimized</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> SEO Ready</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Fast Delivery</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> No Templates</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Ongoing Support</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Custom Design</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Mobile Optimized</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> SEO Ready</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Fast Delivery</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> No Templates</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Ongoing Support</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat reveal">
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Small businesses launched</div>
+    </div>
+    <div class="stat reveal" style="transition-delay:0.15s">
+      <div class="stat-number">7 days</div>
+      <div class="stat-label">Average delivery time</div>
+    </div>
+    <div class="stat reveal" style="transition-delay:0.3s">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">Client satisfaction rate</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-intro reveal">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2>Everything your site needs to succeed</h2>
+      </div>
+      <p class="services-sub">We handle the whole thing — from design and copywriting to launch and beyond — so you can focus on running your business.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">🎨</div>
+        <div class="service-title">Custom Web Design</div>
+        <p class="service-desc">Unique designs built around your brand and customers — never a generic template that looks like everyone else's.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <div class="service-num">02</div>
+        <div class="service-icon">📱</div>
+        <div class="service-title">Mobile-First Development</div>
+        <p class="service-desc">Over 60% of customers visit on mobile. Your site will look and perform perfectly on every screen size.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <div class="service-num">03</div>
+        <div class="service-icon">🔍</div>
+        <div class="service-title">SEO Foundations</div>
+        <p class="service-desc">Built from the ground up to rank on Google — page speed, metadata, structured data, and local SEO included.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <div class="service-num">04</div>
+        <div class="service-icon">🛒</div>
+        <div class="service-title">E-Commerce Setup</div>
+        <p class="service-desc">Sell your products or services online with a clean, easy-to-manage store customers will love to buy from.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <div class="service-num">05</div>
+        <div class="service-icon">✍️</div>
+        <div class="service-title">Copywriting</div>
+        <p class="service-desc">Words that actually convert. We write clear, compelling copy that speaks to your ideal customer.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.3s">
+        <div class="service-num">06</div>
+        <div class="service-icon">🛠️</div>
+        <div class="service-title">Ongoing Maintenance</div>
+        <p class="service-desc">We don't disappear after launch. Updates, edits, and support — whenever you need it, we're here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="reveal">
+      <div class="section-label">How It Works</div>
+      <h2>From idea to live in four steps</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal" style="transition-delay:0.1s">
+        <div class="step-line"></div>
+        <div class="step-num">1</div>
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">We chat about your business, goals, and customers. No jargon, just a conversation.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.2s">
+        <div class="step-line"></div>
+        <div class="step-num">2</div>
+        <div class="step-title">Design & Content</div>
+        <p class="step-desc">We design your site and write the copy. You review and give feedback — it's collaborative.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.3s">
+        <div class="step-line"></div>
+        <div class="step-num">3</div>
+        <div class="step-title">Build & Test</div>
+        <p class="step-desc">We develop the site and test everything — speed, mobile, forms, links. No surprises.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.4s">
+        <div class="step-num">4</div>
+        <div class="step-title">Launch & Support</div>
+        <p class="step-desc">Your site goes live. We stick around for training, edits, and ongoing support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Transparent Pricing</div>
+      <h2>Simple packages, no surprises</h2>
+      <p style="color:#6a5f55;margin-top:0.8rem;font-size:1rem">All packages include design, development, copywriting & launch.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <span class="plan-badge">Starter</span>
+        <div class="plan-name">Launchpad</div>
+        <div class="plan-price"><sup>$</sup>999</div>
+        <div class="plan-period">one-time payment</div>
+        <ul class="plan-features">
+          <li>Up to 5 pages</li>
+          <li>Custom design</li>
+          <li>Mobile optimized</li>
+          <li>Basic SEO setup</li>
+          <li>Contact form</li>
+          <li>30-day support</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-outline">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal" style="transition-delay:0.15s">
+        <div class="featured-label">Most Popular</div>
+        <span class="plan-badge">Growth</span>
+        <div class="plan-name">Professional</div>
+        <div class="plan-price"><sup>$</sup>2,499</div>
+        <div class="plan-period">one-time payment</div>
+        <ul class="plan-features">
+          <li>Up to 12 pages</li>
+          <li>Custom design + branding</li>
+          <li>Full copywriting</li>
+          <li>Advanced SEO</li>
+          <li>Blog setup</li>
+          <li>Google Analytics</li>
+          <li>3 months support</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-solid">Get Started</a>
+      </div>
+      <div class="pricing-card reveal" style="transition-delay:0.3s">
+        <span class="plan-badge">Full Service</span>
+        <div class="plan-name">Commerce</div>
+        <div class="plan-price"><sup>$</sup>4,499</div>
+        <div class="plan-period">one-time payment</div>
+        <ul class="plan-features">
+          <li>Unlimited pages</li>
+          <li>E-commerce store</li>
+          <li>Payment integration</li>
+          <li>Product photography guide</li>
+          <li>Email marketing setup</li>
+          <li>6 months support</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-outline">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Real Results</div>
+      <h2>Small businesses, big outcomes</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">I went from having no online presence to booking out three months in advance. The site pays for itself every week. I wish I'd done it sooner.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-biz">Meadow Lane Florals</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay:0.15s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The whole process was quick and painless. They understood my business straight away and delivered something I'm genuinely proud to show clients.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-biz">Harrington Plumbing & Co.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay:0.3s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Our online orders doubled in the first month after launch. The team handled everything — I just had to show up for our calls. Outstanding value.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">L</div>
+          <div>
+            <div class="testimonial-name">Lisa T.</div>
+            <div class="testimonial-biz">The Batch Bakehouse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="section-label reveal" style="justify-content:center">Ready to grow?</div>
+    <h2 class="reveal">Let's build something <em style="font-style:italic;color:var(--rust)">great</em> together</h2>
+    <p class="reveal">Book a free 30-minute call. No pressure, no pitch deck — just a real conversation about what your business needs.</p>
+    <div class="reveal">
+      <a href="mailto:hello@pixelandco.com" class="btn-primary" style="font-size:1rem;padding:1.1rem 2.8rem">Book a Free Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="color:var(--cream)">Pixel <span>&</span> Co.</a>
+        <p>Beautiful, effective websites for small businesses. We make the web work for you — without the big agency fuss.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Development</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">E-Commerce</a></li>
+          <li><a href="#">Copywriting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="mailto:hello@pixelandco.com">hello@pixelandco.com</a></li>
+          <li><a href="#">Book a Call</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pixel & Co. All rights reserved.</p>
+      <p>Made with care for small business owners everywhere.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function animateCursor() {
+      rx += (mx - rx) * 0.13;
+      ry += (my - ry) * 0.13;
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animateCursor);
+    })();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '20px'; cursor.style.height = '20px';
+        ring.style.width = '54px'; ring.style.height = '54px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '12px'; cursor.style.height = '12px';
+        ring.style.width = '36px'; ring.style.height = '36px';
+      });
+    });
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
