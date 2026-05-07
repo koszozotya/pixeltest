@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO BASICS ── -->
+  <title>FloPage — Professional Website Design for Small Businesses | Szeged</title>
+  <meta name="description" content="FloPage is a Szeged-based web design studio helping small businesses grow online. We build beautiful, fast, and professional websites — tailored to your business, delivered with care." />
+  <meta name="keywords" content="web design Szeged, website design Hungary, small business website, weboldal készítés Szeged, webdesign Szeged, professional website Hungary, FloPage" />
+  <meta name="author" content="FloPage" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English, Hungarian" />
+  <link rel="canonical" href="https://flopage.hu" />
+
+  <!-- ── OPEN GRAPH (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FloPage — Professional Website Design for Small Businesses" />
+  <meta property="og:description" content="We build beautiful, fast, and professional websites for small businesses in Szeged and across Hungary. Get online and start growing." />
+  <meta property="og:url" content="https://flopage.hu" />
+  <meta property="og:site_name" content="FloPage" />
+  <meta property="og:locale" content="hu_HU" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FloPage — Web Design Studio Szeged" />
+  <meta name="twitter:description" content="Professional website design for small businesses. Based in Szeged, serving all of Hungary." />
+
+  <!-- ── SCHEMA MARKUP (helps Google understand your business) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "FloPage",
+    "description": "Web design studio based in Szeged, Hungary. We build professional websites for small businesses.",
+    "url": "https://flopage.hu",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Hungary"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Szeged",
+      "addressCountry": "HU"
+    },
+    "serviceType": "Web Design",
+    "priceRange": "99 000 Ft – 190 000 Ft",
+    "knowsLanguage": ["Hungarian", "English"]
+  }
+  </script>
+  <title>FloPage — Websites for Small Businesses</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVKYB42HMH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EVKYB42HMH');
+  </script>
+  <!-- Cookiebot -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ea87ac42-42e5-480b-b999-eee1e7a76ef1" data-blockingmode="auto" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf6f0;
+      --ink: #141008;
+      --rust: #b84a18;
+      --rust-light: #d4693a;
+      --rust-dark: #a83008;
+      --sand: #ede4d0;
+      --sand-dark: #d8cdb5;
+      --moss: #2e4a38;
+      --gold: #c4a040;
+      --gold-light: #d8b85a;
+      --sky: #1a6896;
+      --sky-light: #2280b8;
+      --purple: #5c2d91;
+      --teal: #0d7a6e;
+      --light-rust: #f2e0d8;
+      --charcoal: #1a1410;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    
+
+    /* ── DROPDOWN NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      background: rgba(15,10,4,0.0);
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(15,10,4,0.96);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 2px 0 rgba(212,66,10,0.4);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 3rem;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+      letter-spacing: -0.01em; color: var(--ink); text-decoration: none; z-index: 10;
+    }
+    .nav-logo span { color: var(--rust-light); }
+    nav.scrolled .nav-logo { color: white; }
+    nav.scrolled .nav-logo span { color: var(--rust-light); }
+    nav.scrolled .nav-burger .bline { background: white; }
+
+    /* Hamburger */
+    .nav-burger {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 44px; height: 44px; cursor: pointer; background: none; border: none;
+      border-radius: 50%; transition: background 0.2s; z-index: 10;
+    }
+    .nav-burger:hover { background: rgba(255,255,255,0.1); }
+    .nav-burger .bline {
+      display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px;
+      transition: transform 0.35s cubic-bezier(.77,0,.175,1), opacity 0.2s, width 0.3s;
+      transform-origin: center;
+    }
+    .nav-burger.open .bline:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-burger.open .bline:nth-child(2) { opacity:0; width:0; }
+    .nav-burger.open .bline:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Dropdown panel */
+    .nav-dropdown {
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(12,8,2,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 2px solid var(--rust);
+      transform: translateY(-8px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      padding: 0;
+    }
+    .nav-dropdown.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+    .nav-dropdown-inner {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      gap: 0; max-width: 100%; padding: 0;
+    }
+    .nav-dd-item {
+      display: flex; flex-direction: column; padding: 2.5rem 2.8rem;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer; transition: background 0.2s;
+      background: none; border-top: none; border-bottom: none; border-left: none;
+      font-family: inherit; text-align: left; color: white;
+      position: relative; overflow: hidden;
+    }
+    .nav-dd-item:last-child { border-right: none; }
+    .nav-dd-item::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .nav-dd-item:nth-child(1)::before { background: var(--rust); }
+    .nav-dd-item:nth-child(2)::before { background: var(--gold); }
+    .nav-dd-item:nth-child(3)::before { background: var(--moss-light); }
+    .nav-dd-item:nth-child(4)::before { background: var(--sky-light); }
+    .nav-dd-item:hover { background: rgba(255,255,255,0.04); }
+    .nav-dd-item:hover::before { transform: scaleX(1); }
+    .nav-dd-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+    .nav-dd-label {
+      font-size: 1rem; font-family: 'Playfair Display', serif;
+      font-weight: 700; margin-bottom: 0.3rem; color: white;
+    }
+    .nav-dd-desc { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+    .nav-dd-cta {
+      background: var(--rust); color: white; border: none; padding: 1rem 2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+      font-weight: 500;
+    }
+    .nav-dd-cta:hover { background: var(--rust-light); }
+
+    .nav-bottom-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 2.8rem; border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.3);
+    }
+    .nav-bottom-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-bottom-links button {
+      background: none; border: none; color: rgba(255,255,255,0.5);
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; font-family: inherit; transition: color 0.2s;
+    }
+    .nav-bottom-links button:hover { color: white; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 3rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f7f0e4 0%, #f0e6d0 50%, #e8dcc4 100%);
+    }
+    .hero-text h1 { color: var(--ink) !important; }
+    .hero-eyebrow { color: var(--rust) !important; }
+    .hero-eyebrow::before { background: var(--rust) !important; }
+    .hero-sub { color: #5a4f44 !important; }
+    .btn-ghost { color: var(--ink) !important; border-bottom-color: rgba(15,10,4,0.25) !important; }
+    .btn-ghost:hover { color: var(--rust) !important; border-bottom-color: var(--rust) !important; }
+
+    /* hero bg handled by gradient */
+
+    .hero-text { position: relative; z-index: 1; padding-right: 3rem; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rust); font-weight: 500; margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 28px; height: 1px; background: var(--rust);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+    h1 em { font-style: italic; color: var(--rust); }
+
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.75;
+      color: #5a4f44; max-width: 420px;
+      margin-bottom: 2.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; align-items: center;
+      opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--rust); color: var(--cream);
+      padding: 1rem 2.2rem; border-radius: 2px;
+      font-size: 0.88rem; letter-spacing: 0.05em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--ink); font-size: 0.88rem; letter-spacing: 0.05em;
+      text-transform: uppercase; font-weight: 500; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .btn-ghost:hover { gap: 0.9rem; }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; z-index: 1;
+      display: flex; justify-content: center; align-items: center;
+      opacity: 0; animation: fadeIn 1s 0.5s forwards;
+    }
+
+    .hero-mockup {
+      width: 100%; max-width: 480px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 40px 100px rgba(26,20,16,0.18), 0 8px 24px rgba(26,20,16,0.08);
+      overflow: hidden;
+    }
+    .mockup-bar {
+      background: #f0ece6; padding: 0.7rem 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 1px solid #e2ddd5;
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-dot:nth-child(1) { background: #ff6057; }
+    .mockup-dot:nth-child(2) { background: #ffbd2e; }
+    .mockup-dot:nth-child(3) { background: #27c93f; }
+    .mockup-url {
+      flex: 1; background: white; border-radius: 20px;
+      padding: 0.28rem 0.8rem; font-size: 0.72rem; color: #888;
+      font-family: monospace; margin-left: 0.5rem;
+    }
+
+    .mockup-body { padding: 1.5rem; }
+    .mockup-hero-img {
+      width: 100%; height: 140px; background: linear-gradient(135deg, var(--moss) 0%, #2a3d32 100%);
+      border-radius: 4px; margin-bottom: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mockup-hero-img span {
+      color: rgba(255,255,255,0.9); font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-style: italic;
+    }
+    .mockup-h { height: 10px; background: #1a1410; border-radius: 3px; width: 55%; margin-bottom: 0.6rem; }
+    .mockup-p { height: 7px; background: #ddd; border-radius: 3px; margin-bottom: 0.4rem; }
+    .mockup-p.w80 { width: 80%; }
+    .mockup-p.w60 { width: 60%; }
+    .mockup-btn { width: 110px; height: 30px; background: var(--rust); border-radius: 2px; margin-top: 1rem; }
+
+    .mockup-cards {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 1.2rem;
+    }
+    .mockup-card { background: var(--sand); border-radius: 4px; padding: 0.7rem; }
+    .mockup-card-icon { width: 22px; height: 22px; background: var(--rust); border-radius: 3px; margin-bottom: 0.4rem; opacity: 0.7; }
+    .mockup-card-line { height: 6px; background: #c8b9a4; border-radius: 2px; margin-bottom: 0.3rem; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 1.5rem 0; overflow: hidden; white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-flex; gap: 3rem;
+      animation: ticker 20s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 400;
+    }
+    .ticker-dot { width: 6px; height: 6px; background: var(--rust); border-radius: 50%; flex-shrink: 0; opacity: 0.9; }
+
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+ 100%{background-position:300% 50%} }
+
+    /* STATS */
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .stat {
+      padding: 4rem 3rem;
+    }
+    .stat:nth-child(1) { background: #2a1e10; }
+    .stat:nth-child(2) { background: #1e1408; }
+    .stat:nth-child(3) { background: #261a0c; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      font-weight: 900; color: var(--gold-light); line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+
+    /* SERVICES */
+    .services { padding: 7rem 3rem; background: var(--cream); }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rust); font-weight: 500; margin-bottom: 1.2rem;
+    }
+    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--rust); }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .services-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+    .services-sub { font-size: 1rem; line-height: 1.8; color: #5a4f44; max-width: 380px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--sand); }
+
+    .service-card {
+      background: white; padding: 2.8rem 2.4rem;
+      position: relative; overflow: hidden;
+      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px; background: var(--rust);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { background: #faf7f2; }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .service-card:nth-child(1) .service-icon { background: #fde8e0; }
+    .service-card:nth-child(2) .service-icon { background: #ddeef5; }
+    .service-card:nth-child(3) .service-icon { background: #d8f0e4; }
+    .service-card:nth-child(4) .service-icon { background: #fef3d8; }
+    .service-card:nth-child(5) .service-icon { background: #ede0f5; }
+    .service-card:nth-child(6) .service-icon { background: #d8ede8; }
+    .service-card:nth-child(1) .service-num { color: #fde8e0; }
+    .service-card:nth-child(2) .service-num { color: #ddeef5; }
+    .service-card:nth-child(3) .service-num { color: #d8f0e4; }
+    .service-card:nth-child(4) .service-num { color: #fef3d8; }
+    .service-card:nth-child(5) .service-num { color: #ede0f5; }
+    .service-card:nth-child(6) .service-num { color: #d8ede8; }
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .service-desc { font-size: 0.9rem; line-height: 1.7; color: #6a5f55; }
+    .service-num {
+      position: absolute; top: 1.5rem; right: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; font-weight: 900;
+      color: var(--sand); line-height: 1;
+    }
+
+    /* PROCESS */
+    .process { background: linear-gradient(135deg, #e8f0ec 0%, #dceae2 50%, #d0e4d8 100%); color: var(--ink); padding: 7rem 3rem; }
+    .process h2 { color: var(--ink); }
+    .process .section-label { color: var(--moss); }
+    .process .section-label::before { background: var(--moss); }
+
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; }
+    .step { position: relative; }
+    .step-line {
+      position: absolute; top: 22px; left: calc(100% - 0px); right: -2rem;
+      height: 1px; background: rgba(46,74,56,0.25); z-index: 0;
+    }
+    .step:last-child .step-line { display: none; }
+
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--rust);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--rust); font-size: 1rem;
+      margin-bottom: 1.5rem; position: relative; z-index: 1;
+      background: white;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .step-desc { font-size: 0.88rem; line-height: 1.7; color: #4a5f54; }
+
+    /* PRICING */
+    .pricing { padding: 7rem 3rem; background: var(--cream); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+
+    .pricing-card {
+      padding: 2.8rem 2.4rem; border: 1.5px solid var(--sand);
+      border-radius: 8px; position: relative;
+      background: white; color: var(--ink);
+      transition: border-color 0.3s, transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s;
+    }
+    .pricing-card:hover { border-color: var(--rust); transform: translateY(-6px); box-shadow: 0 24px 60px rgba(212,66,10,0.12); }
+    .plan-name { color: var(--ink); }
+    .plan-period { color: #6a5f55; }
+    .plan-features li { color: var(--ink); border-bottom-color: var(--sand); }
+    .btn-plan-outline { border: 1.5px solid var(--ink); color: var(--ink); background: white; }
+    .btn-plan-outline:hover { background: var(--ink); color: white; }
+    .pricing-card.featured {
+      background: linear-gradient(160deg, var(--rust-dark) 0%, var(--rust) 60%, var(--rust-light) 100%);
+      color: white; border-color: transparent;
+      box-shadow: 0 20px 60px rgba(184,74,24,0.35);
+    }
+    .pricing-card.featured:hover { border-color: var(--gold); transform: translateY(-10px); }
+    .pricing-card.featured .plan-price { color: white; }
+    .pricing-card.featured .plan-badge { color: rgba(255,255,255,0.8); }
+    .pricing-card.featured .plan-period { color: rgba(255,255,255,0.65); }
+    .pricing-card.featured .plan-features li { border-bottom-color: rgba(255,255,255,0.15); color: white; }
+    .pricing-card.featured .plan-features li::before { color: var(--gold-light); }
+
+    .plan-badge {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 500; color: var(--rust); margin-bottom: 1rem; display: block;
+    }
+    .pricing-card:not(.featured) .plan-badge { color: var(--rust); }
+    .featured .plan-badge { color: var(--gold); }
+    .featured-label {
+      position: absolute; top: -12px; right: 1.5rem;
+      background: var(--rust); color: white;
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.25rem 0.8rem; border-radius: 20px;
+    }
+
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem;
+    }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; line-height: 1;
+      color: var(--rust); margin-bottom: 0.3rem;
+    }
+    .pricing-card:not(.featured) .plan-price { color: var(--rust); }
+    .featured .plan-price { color: var(--gold); }
+    .plan-price sup { font-size: 1rem; vertical-align: super; margin-left: 0.2rem; font-weight: 500; }
+    .plan-period { font-size: 0.82rem; color: #a89f96; margin-bottom: 1.8rem; }
+    .featured .plan-period { color: #8a7f76; }
+
+    .plan-features { list-style: none; margin-bottom: 2.2rem; }
+    .plan-features li {
+      padding: 0.55rem 0; border-bottom: 1px solid var(--sand);
+      font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .featured .plan-features li { border-bottom-color: #2a2520; }
+    .plan-features li::before { content: '✓'; color: var(--rust); font-weight: 700; flex-shrink: 0; }
+    .featured .plan-features li::before { color: var(--gold); }
+
+    .btn-plan {
+      display: block; text-align: center;
+      padding: 0.9rem; border-radius: 2px;
+      font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; transition: all 0.2s;
+    }
+    .btn-plan-outline {
+      border: 1.5px solid var(--ink); color: var(--ink);
+    }
+    .btn-plan-outline:hover { background: var(--ink); color: var(--cream); }
+    .btn-plan-solid { background: var(--rust); color: white; }
+    .btn-plan-solid:hover { background: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--sand); padding: 7rem 3rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+    .testimonial {
+      background: white; padding: 2.5rem;
+      border-radius: 8px; border-top: 4px solid transparent;
+      color: var(--ink);
+    }
+    .testimonial:nth-child(1) { border-top-color: var(--rust); }
+    .testimonial:nth-child(2) { border-top-color: var(--moss); }
+    .testimonial:nth-child(3) { border-top-color: var(--sky); }
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; line-height: 1; color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-text { font-size: 0.95rem; line-height: 1.75; color: #3a3030; margin-bottom: 1.5rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--sand); overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; color: var(--rust);
+    }
+    .testimonial-name { font-weight: 500; font-size: 0.9rem; }
+    .testimonial-biz { font-size: 0.8rem; color: #8a7f76; }
+
+    /* CTA */
+    .cta-section {
+      padding: 8rem 3rem; text-align: center;
+      position: relative; overflow: hidden;
+      background: var(--sand);
+    }
+    /* no decorative circle */
+
+    .cta-section h2 { max-width: 700px; margin: 0 auto 1.5rem; }
+    .cta-section p { font-size: 1.05rem; color: #6a5f55; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.75; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: var(--cream); padding: 4rem 3rem 2rem;
+      border-top: 3px solid var(--rust);
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.9rem; color: #8a7f76; line-height: 1.7; margin-top: 1rem; max-width: 280px; }
+    .footer-col h4 {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a { color: #a89f96; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid #2a2520;
+      padding-top: 2rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { font-size: 0.82rem; color: #6a5f55; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+    /* ── ENHANCED ANIMATIONS ── */
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-5px)} 40%,80%{transform:translateX(5px)} }
+    @keyframes slideInLeft { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes slideInRight { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes scaleIn { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
+    @keyframes statPop { 0%{transform:scale(0.7);opacity:0} 70%{transform:scale(1.08)} 100%{transform:scale(1);opacity:1} }
+    @keyframes lineGrow { from{width:0} to{width:28px} }
+    @keyframes borderPulse { 0%,100%{border-color:var(--rust)} 50%{border-color:var(--gold)} }
+
+    /* Stagger reveal variants */
+    .reveal-left { opacity:0; transform:translateX(-32px); transition:opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(32px); transition:opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+    .reveal-scale { opacity:0; transform:scale(0.93); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-scale.visible { opacity:1; transform:scale(1); }
+
+    /* Stagger children */
+    .stagger > * { opacity:0; transform:translateY(16px); transition:opacity 0.55s ease, transform 0.55s ease; }
+    .stagger.visible > *:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+    .stagger.visible > *:nth-child(2){opacity:1;transform:none;transition-delay:0.1s}
+    .stagger.visible > *:nth-child(3){opacity:1;transform:none;transition-delay:0.2s}
+    .stagger.visible > *:nth-child(4){opacity:1;transform:none;transition-delay:0.3s}
+    .stagger.visible > *:nth-child(5){opacity:1;transform:none;transition-delay:0.4s}
+    .stagger.visible > *:nth-child(6){opacity:1;transform:none;transition-delay:0.5s}
+
+    /* Service card refined hover */
+    .service-card { transition: background 0.3s, box-shadow 0.3s, transform 0.3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(20,16,8,0.1); }
+
+    /* Pricing card enter animation */
+    .pricing-card { transition: border-color 0.3s, transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s; }
+    .pricing-card:hover { box-shadow: 0 24px 60px rgba(184,74,24,0.15); }
+
+    /* Stat number pop when visible */
+    .stat.visible .stat-number { animation: statPop 0.55s cubic-bezier(.34,1.56,.64,1) forwards; }
+    .stat { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .stat.visible { opacity:1; transform:translateY(0); }
+
+    /* Section label line draw */
+    .section-label::before { width:0; transition:width 0.5s ease 0.3s; }
+    .reveal.visible .section-label::before,
+    .reveal-left.visible .section-label::before { width:28px; }
+
+    /* Testimonial hover */
+    .testimonial { transition: transform 0.3s, box-shadow 0.3s; }
+    .testimonial:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(20,16,8,0.1); }
+
+    /* Step connector pulse */
+    .step-num { transition: border-color 0.3s, background 0.3s; }
+    .step:hover .step-num { background: var(--rust); color: white; border-color: var(--rust); animation: borderPulse 1.5s ease infinite; }
+
+    /* Ticker gradient edges */
+    .ticker { position: relative; }
+    .ticker::before, .ticker::after { content:''; position:absolute; top:0; width:80px; height:100%; z-index:2; pointer-events:none; }
+    .ticker::before { left:0; background:linear-gradient(to right, var(--ink), transparent); }
+    .ticker::after  { right:0; background:linear-gradient(to left, var(--ink), transparent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8rem; }
+      .hero::before { display: none; }
+      .hero-visual { display: none; }
+      .stats, .services-intro, .process-steps, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-dropdown-inner { grid-template-columns: 1fr 1fr; }
+      .nav-inner { padding: 1rem 1.5rem; }
+      .hero, .services, .pricing, .testimonials, .process, .cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-section { padding: 4rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 2rem 1.5rem; }
+    }
+
+    /* ── MULTI-PAGE FORM ── */
+    .fpage { display:none; }
+    .fpage.active { display:block; }
+    .fpage h3 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:#141008; margin-bottom:0.3rem; }
+    .fpage h3 em { color:#d4420a; font-style:italic; font-size:1.1rem; }
+    .fp-nav { display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; gap:1rem; }
+    .fp-back-btn { background:none; border:1.5px solid #d8cfc4; color:#5a4a3a; padding:0.8rem 1.4rem; border-radius:4px; font-family:'DM Sans',sans-serif; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:border-color 0.2s, color 0.2s; font-weight:500; }
+    .fp-back-btn:hover { border-color:#d4420a; color:#d4420a; }
+    .fp-nav .form-btn { width:auto; padding:0.85rem 1.8rem; margin-top:0; }
+
+    /* Progress */
+    .fp-progress { margin-bottom:2rem; }
+    .fp-bar { background:#f0e8e0; border-radius:20px; height:5px; margin-bottom:0.8rem; overflow:hidden; }
+    .fp-fill { height:100%; background:linear-gradient(90deg,#d4420a,#e8720a); border-radius:20px; width:25%; transition:width 0.4s ease; }
+    .fp-steps { display:flex; gap:0.5rem; }
+    .fp-step { width:28px; height:28px; border-radius:50%; border:2px solid #d8cfc4; background:#faf6f0; color:#a09080; font-size:0.78rem; font-weight:600; display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
+    .fp-step.active { border-color:#d4420a; background:#d4420a; color:white; }
+    .fp-step.done { border-color:#2e7d32; background:#2e7d32; color:white; }
+
+    /* ── CONTACT FORM SECTION ── */
+    .contact-section { padding: 7rem 3rem; background: #1c1208; }
+    .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+    .contact-left h2 { color: white; }
+    .contact-left p { font-size:1rem; line-height:1.85; color:rgba(255,255,255,0.55); margin-bottom:2rem; }
+    .contact-section .section-label { color: var(--gold) !important; }
+    .contact-section .section-label::before { background: var(--gold) !important; width:28px !important; }
+    .contact-details { display:flex; flex-direction:column; gap:0.8rem; margin-top:2rem; }
+    .contact-detail { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; background:rgba(255,255,255,0.07); border-radius:6px; border-left:3px solid var(--rust); }
+    .contact-detail-icon { font-size:1.2rem; flex-shrink:0; }
+    .contact-detail-lbl { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.15rem; }
+    .contact-detail-val { font-size:0.9rem; color:rgba(255,255,255,0.8); }
+    .contact-detail-val a { color:rgba(255,255,255,0.8); text-decoration:none; }
+    .contact-detail-val a:hover { color:#e8a020; }
+    .contact-form-card { background:white; border-radius:12px; padding:2.5rem; box-shadow:0 32px 80px rgba(0,0,0,0.4); }
+    .contact-form-card h3 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; color:#141008; margin-bottom:0.3rem; }
+    .contact-form-card h3 em { color:#d4420a; font-style:italic; }
+    .form-sub { font-size:0.85rem; color:#7a6a5a; margin-bottom:1.5rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.35rem; margin-bottom:0.9rem; }
+    .form-group > label:first-child { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:#3a2e24; font-weight:600; }
+    .form-group input, .form-group textarea, .form-group select { border:1.5px solid #d8cfc4; border-radius:4px; padding:0.8rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#141008; background:#faf6f0; outline:none; width:100%; transition:border-color 0.2s, box-shadow 0.2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color:#b0a090; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:#d4420a; box-shadow:0 0 0 3px rgba(212,66,10,0.1); background:white; }
+    .form-group textarea { resize:vertical; min-height:90px; }
+    .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; background-color:#faf6f0; padding-right:2.5rem; color:#141008; }
+    .radio-group, .checkbox-group { display:flex; flex-direction:column; gap:0.4rem; margin-top:0.3rem; }
+    .radio-label, .check-label { display:flex; align-items:center; gap:0.7rem; font-size:0.88rem; color:#141008; cursor:pointer; padding:0.55rem 0.9rem; border-radius:4px; border:1.5px solid #d8cfc4; background:#faf6f0; transition:border-color 0.2s, background 0.2s; }
+    .radio-label:hover, .check-label:hover { border-color:#d4420a; background:#fff5f0; }
+    .radio-label input, .check-label input { accent-color:#d4420a; width:15px; height:15px; flex-shrink:0; cursor:pointer; }
+    .radio-label:has(input:checked), .check-label:has(input:checked) { border-color:#d4420a; background:#fff0ea; }
+    .form-btn { width:100%; background:#d4420a; color:white; border:none; padding:1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:500; cursor:pointer; border-radius:4px; transition:background 0.2s, transform 0.2s; margin-top:0.8rem; }
+    .form-btn:hover { background:#a83008; transform:translateY(-2px); }
+    .form-btn:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+    .form-success { display:none; text-align:center; padding:3rem 1rem; }
+    .form-success-icon { font-size:3rem; margin-bottom:1rem; display:block; }
+    .form-success h4 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:#141008; margin-bottom:0.6rem; }
+    .form-success p { font-size:0.9rem; color:#6a5a4a; line-height:1.75; }
+
+
+
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switch {
+      display: flex; align-items: center;
+      background: rgba(200,132,58,0.08);
+      border: 1px solid rgba(200,132,58,0.25);
+      border-radius: 30px; padding: 3px; gap: 2px;
+      position: relative; z-index: 10;
+    }
+    nav.scrolled .lang-switch { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .lang-btn {
+      position: relative; z-index: 1; border: none; background: transparent;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink);
+      padding: 0.35rem 0.7rem; border-radius: 24px;
+      transition: color 0.25s; display: flex; align-items: center; gap: 0.3rem;
+    }
+    nav.scrolled .lang-btn { color: rgba(255,255,255,0.7); }
+    .lang-btn.active { color: white; }
+    nav.scrolled .lang-btn.active { color: white; }
+    .lang-pill {
+      position: absolute; top: 3px; left: 3px;
+      height: calc(100% - 6px);
+      background: var(--rust); border-radius: 24px;
+      transition: transform 0.3s cubic-bezier(.77,0,.175,1), width 0.3s;
+      z-index: 0; pointer-events: none;
+    }
+    [data-i18n] { transition: opacity 0.15s ease; }
+    body.lang-switching [data-i18n] { opacity: 0; }
+
+
+    /* ── CARE PLAN ── */
+    .care { padding: 7rem 3rem; background: var(--ink); color: var(--cream); position: relative; overflow: hidden; }
+    .care::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 400px; height: 400px; border-radius: 50%;
+      border: 1px solid rgba(200,132,58,0.08);
+      pointer-events: none;
+    }
+    .care::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      border: 1px solid rgba(200,132,58,0.05);
+      pointer-events: none;
+    }
+    .care-header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; margin-bottom: 4rem; gap: 2rem; }
+    .care-header .section-label { color: var(--gold); }
+    .care-header .section-label::before { background: var(--gold); }
+    .care-header h2 { color: var(--cream); }
+    .care-intro { font-size: 0.95rem; line-height: 1.85; color: rgba(250,246,240,0.55); max-width: 380px; align-self: end; }
+
+    .care-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: rgba(255,255,255,0.05); margin-bottom: 4rem; }
+    .care-card {
+      background: rgba(255,255,255,0.03);
+      padding: 2.8rem 2.4rem;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .care-card:hover { background: rgba(255,255,255,0.06); }
+    .care-card.featured-care {
+      background: linear-gradient(160deg, var(--rust-dark) 0%, var(--rust) 100%);
+    }
+    .care-card.featured-care:hover { background: linear-gradient(160deg, var(--rust) 0%, var(--rust-light) 100%); }
+
+    .care-badge {
+      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(250,246,240,0.45); margin-bottom: 0.8rem; display: block;
+      font-weight: 400;
+    }
+    .care-card.featured-care .care-badge { color: rgba(255,255,255,0.7); }
+
+    .care-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--cream); margin-bottom: 0.5rem; line-height: 1;
+    }
+    .care-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900;
+      color: var(--gold); line-height: 1; margin-bottom: 0.2rem;
+    }
+    .care-card.featured-care .care-price { color: white; }
+    .care-price sup { font-size: 1rem; vertical-align: super; margin-left: 0.2rem; }
+    .care-period { font-size: 0.78rem; color: rgba(250,246,240,0.4); margin-bottom: 2rem; }
+    .care-card.featured-care .care-period { color: rgba(255,255,255,0.65); }
+
+    .care-features { list-style: none; margin-bottom: 2rem; }
+    .care-features li {
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.88rem; display: flex; align-items: center; gap: 0.6rem;
+      color: rgba(250,246,240,0.65);
+    }
+    .care-card.featured-care .care-features li { border-bottom-color: rgba(255,255,255,0.15); color: white; }
+    .care-features li:last-child { border-bottom: none; }
+    .care-features li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .care-card.featured-care .care-features li::before { color: rgba(255,255,255,0.9); }
+
+    .btn-care-outline {
+      display: block; text-align: center; padding: 0.85rem;
+      border: 1.5px solid rgba(255,255,255,0.2); color: var(--cream);
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: border-color 0.2s, background 0.2s;
+      background: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      font-weight: 500; border-radius: 2px; width: 100%;
+    }
+    .btn-care-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-care-solid {
+      display: block; text-align: center; padding: 0.85rem;
+      background: white; color: var(--rust);
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      font-weight: 500; border-radius: 2px; width: 100%;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-care-solid:hover { background: var(--gold); color: white; transform: translateY(-2px); }
+
+    .care-note {
+      text-align: center;
+      font-size: 0.82rem; color: rgba(250,246,240,0.35);
+      line-height: 1.75;
+    }
+    .care-note strong { color: var(--gold); font-weight: 400; }
+
+
+    /* ── PRICING TOGGLE ── */
+    .pricing-toggle-wrap {
+      display: flex; align-items: center; justify-content: center;
+      margin: 2rem 0 3.5rem; gap: 1rem;
+    }
+    .toggle-label {
+      font-size: 0.82rem; letter-spacing: 0.06em; color: #6a5f55;
+      transition: color 0.25s; font-weight: 400;
+    }
+    .toggle-label.active { color: var(--ink); font-weight: 500; }
+
+    .toggle-switch {
+      position: relative; width: 52px; height: 28px; cursor: pointer;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-track {
+      position: absolute; inset: 0;
+      background: var(--rust); border-radius: 28px;
+      transition: background 0.3s;
+    }
+    .toggle-track::before {
+      content: ''; position: absolute;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: white; top: 4px; left: 4px;
+      transition: transform 0.3s cubic-bezier(.77,0,.175,1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .toggle-switch input:checked + .toggle-track { background: var(--rust); }
+    .toggle-switch input:checked + .toggle-track::before { transform: translateX(24px); }
+
+    .save-badge {
+      background: var(--rust); color: white;
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 500;
+    }
+
+    /* Hide/show pricing panels */
+    .pricing-panel { display: none; }
+    .pricing-panel.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+    /* Monthly price styling */
+    .plan-price-monthly { color: var(--rust); }
+    .plan-price-orig {
+      font-size: 0.8rem; color: #a09080; text-decoration: line-through;
+      margin-bottom: 0.1rem; display: block;
+    }
+
+
+    .footer-col ul li button {
+      background: none; border: none; cursor: pointer;
+      color: rgba(250,246,240,0.5); font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 300;
+      padding: 0; text-align: left;
+      transition: color 0.2s;
+    }
+    .footer-col ul li button:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo">Flo<span>Page</span></a>
+      <div style="display:flex;align-items:center;gap:0.8rem;z-index:10">
+        <div class="lang-switch" id="langSwitch">
+          <div class="lang-pill" id="langPill"></div>
+          <button class="lang-btn active" id="btnEn">🇬🇧 EN</button>
+          <button class="lang-btn" id="btnHu">🇭🇺 HU</button>
+        </div>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span class="bline"></span><span class="bline"></span><span class="bline"></span>
+      </button>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="navDropdown">
+      <div class="nav-dropdown-inner">
+        <button class="nav-dd-item" data-scroll="services">
+          <span class="nav-dd-icon">🎨</span>
+          <span class="nav-dd-label" data-i18n="nav_services">Services</span>
+          <span class="nav-dd-desc">Web design, SEO, e-commerce & more</span>
+        </button>
+        <button class="nav-dd-item" data-scroll="process">
+          <span class="nav-dd-icon">⚡</span>
+          <span class="nav-dd-label" data-i18n="nav_process">Process</span>
+          <span class="nav-dd-desc">From idea to live in 4 simple steps</span>
+        </button>
+        <button class="nav-dd-item" data-scroll="pricing">
+          <span class="nav-dd-icon">💰</span>
+          <span class="nav-dd-label" data-i18n="nav_pricing">Pricing</span>
+          <span class="nav-dd-desc">Transparent packages, no surprises</span>
+        </button>
+        <button class="nav-dd-item" data-scroll="care">
+          <span class="nav-dd-icon">🛡️</span>
+          <span class="nav-dd-label" data-i18n="nav_care">Care Plans</span>
+          <span class="nav-dd-desc" data-i18n="nav_care_desc">Monthly hosting & support</span>
+        </button>
+        <button class="nav-dd-item" data-scroll="contact">
+          <span class="nav-dd-icon">✉️</span>
+          <span class="nav-dd-label" data-i18n="nav_contact">Contact Us</span>
+          <span class="nav-dd-desc">Send us a message or book a call</span>
+        </button>
+      </div>
+      <div class="nav-bottom-bar">
+        <ul class="nav-bottom-links">
+          <li><button data-scroll="services">Services</button></li>
+          <li><button data-scroll="process">Process</button></li>
+          <li><button data-scroll="pricing">Pricing</button></li>
+        </ul>
+        <button class="nav-dd-cta" data-scroll="contact">Book a Free Call →</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Web Design for Small Business</div>
+      <h1 data-i18n="hero_h1">Your business deserves a site that works</h1>
+      <p class="hero-sub" data-i18n="hero_sub">We're a two-person web design studio based in Szeged. We build beautiful, professional websites that help small businesses stand out online, get found on Google, and turn visitors into customers — all at a price that makes sense for small businesses.</p>
+      <div class="hero-actions">
+        <a data-scroll="pricing" class="btn-primary" data-i18n="hero_cta1">See Packages</a>
+        <a data-scroll="process" class="btn-ghost" data-i18n="hero_cta2">How it works →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-url">yoursmallbusiness.com</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-hero-img"><span>Welcome to Our Shop</span></div>
+          <div class="mockup-h"></div>
+          <div class="mockup-p w80"></div>
+          <div class="mockup-p w60"></div>
+          <div class="mockup-btn"></div>
+          <div class="mockup-cards">
+            <div class="mockup-card">
+              <div class="mockup-card-icon"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:70%"></div>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-icon" style="opacity:0.5"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:50%"></div>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-icon" style="opacity:0.3"></div>
+              <div class="mockup-card-line"></div>
+              <div class="mockup-card-line" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner" id="ticker">
+      <!-- items injected by JS based on language -->
+    </div>
+  </div>
+
+    <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-intro reveal">
+      <div>
+        <div class="section-label" data-i18n="services_tag">What We Do</div>
+        <h2 data-i18n="services_h2">Everything your site needs to succeed</h2>
+      </div>
+      <p class="services-sub" data-i18n="services_sub">We handle the whole thing — from design and copywriting to launch and beyond — so you can focus on running your business.</p>
+    </div>
+    <div class="services-grid stagger">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">🎨</div>
+        <div class="service-title" data-i18n="svc1_title">Custom Web Design</div>
+        <p class="service-desc" data-i18n="svc1_desc">Unique designs built around your brand and customers — never a generic template that looks like everyone else's.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <div class="service-num">02</div>
+        <div class="service-icon">📱</div>
+        <div class="service-title" data-i18n="svc2_title">Mobile-First Development</div>
+        <p class="service-desc" data-i18n="svc2_desc">Over 60% of customers visit on mobile. Your site will look and perform perfectly on every screen size.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <div class="service-num">03</div>
+        <div class="service-icon">🔍</div>
+        <div class="service-title" data-i18n="svc3_title">SEO Foundations</div>
+        <p class="service-desc" data-i18n="svc3_desc">Built from the ground up to rank on Google — page speed, metadata, structured data, and local SEO included.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <div class="service-num">04</div>
+        <div class="service-icon">🛒</div>
+        <div class="service-title" data-i18n="svc4_title">E-Commerce Setup</div>
+        <p class="service-desc" data-i18n="svc4_desc">Sell your products or services online with a clean, easy-to-manage store customers will love to buy from.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <div class="service-num">05</div>
+        <div class="service-icon">✍️</div>
+        <div class="service-title" data-i18n="svc5_title">Copywriting</div>
+        <p class="service-desc" data-i18n="svc5_desc">Words that actually convert. We write clear, compelling copy that speaks to your ideal customer.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.3s">
+        <div class="service-num">06</div>
+        <div class="service-icon">🛠️</div>
+        <div class="service-title" data-i18n="svc6_title">Ongoing Maintenance</div>
+        <p class="service-desc" data-i18n="svc6_desc">We don't disappear after launch. Updates, edits, and support — whenever you need it, we're here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="reveal">
+      <div class="section-label" data-i18n="process_tag">How It Works</div>
+      <h2 data-i18n="process_h2">From idea to live in four steps</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal" style="transition-delay:0.1s">
+        <div class="step-line"></div>
+        <div class="step-num">1</div>
+        <div class="step-title" data-i18n="step1_title">Discovery Call</div>
+        <p class="step-desc" data-i18n="step1_desc">We chat about your business, goals, and customers. No jargon, just a conversation.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.2s">
+        <div class="step-line"></div>
+        <div class="step-num">2</div>
+        <div class="step-title" data-i18n="step2_title">Design & Content</div>
+        <p class="step-desc" data-i18n="step2_desc">We design your site and write the copy. You review and give feedback — it's collaborative.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.3s">
+        <div class="step-line"></div>
+        <div class="step-num">3</div>
+        <div class="step-title" data-i18n="step3_title">Build & Test</div>
+        <p class="step-desc" data-i18n="step3_desc">We develop the site and test everything — speed, mobile, forms, links. No surprises.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.4s">
+        <div class="step-num">4</div>
+        <div class="step-title" data-i18n="step4_title">Launch & Support</div>
+        <p class="step-desc" data-i18n="step4_desc">Your site goes live. We stick around for training, edits, and ongoing support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center" data-i18n="pricing_tag">Transparent Pricing</div>
+      <h2 data-i18n="pricing_h2">Simple packages, no surprises</h2>
+      <p style="color:#6a5f55;margin-top:0.8rem;font-size:1rem" data-i18n="pricing_sub">All packages include design, development, copywriting & launch.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="pricing-toggle-wrap">
+      <span class="toggle-label active" id="labelOnce" data-i18n="toggle_once">One-time</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="pricingToggle"/>
+        <span class="toggle-track"></span>
+      </label>
+      <span class="toggle-label" id="labelMonthly" data-i18n="toggle_monthly">Monthly</span>
+      <span class="save-badge" data-i18n="toggle_save">+ Care included</span>
+    </div>
+
+    <!-- ONE-TIME PACKAGES -->
+    <div class="pricing-panel active" id="panelOnce">
+      <div class="pricing-card reveal">
+        <span class="plan-badge" data-i18n="plan1_badge">Starter</span>
+        <div class="plan-name" data-i18n="plan1_name">Launchpad</div>
+        <div class="plan-price">99 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="plan_period">one-time payment</div>
+        <ul class="plan-features">
+          <li data-i18n="p1f1">Up to 5 pages</li>
+          <li data-i18n="p1f2">Custom design</li>
+          <li data-i18n="p1f3">Mobile optimized</li>
+          <li data-i18n="p1f4">Basic SEO setup</li>
+          <li data-i18n="p1f5">Contact form</li>
+          <li data-i18n="p1f6">30-day support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-outline" data-i18n="plan_cta">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal" style="transition-delay:0.15s">
+        <div class="featured-label" data-i18n="most_popular">Most Popular</div>
+        <span class="plan-badge" data-i18n="plan2_badge">Growth</span>
+        <div class="plan-name" data-i18n="plan2_name">Professional</div>
+        <div class="plan-price">149 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="plan_period">one-time payment</div>
+        <ul class="plan-features">
+          <li data-i18n="p2f1">Up to 12 pages</li>
+          <li data-i18n="p2f2">Custom design + branding</li>
+          <li data-i18n="p2f3">Full copywriting</li>
+          <li data-i18n="p2f4">Advanced SEO</li>
+          <li data-i18n="p2f5">Blog setup</li>
+          <li data-i18n="p2f6">Google Analytics</li>
+          <li data-i18n="p2f7">3 months support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-solid" data-i18n="plan_cta">Get Started</a>
+      </div>
+      <div class="pricing-card reveal" style="transition-delay:0.3s">
+        <span class="plan-badge" data-i18n="plan3_badge">Full Service</span>
+        <div class="plan-name" data-i18n="plan3_name">Commerce</div>
+        <div class="plan-price">190 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="plan_period">one-time payment</div>
+        <ul class="plan-features">
+          <li data-i18n="p3f1">Unlimited pages</li>
+          <li data-i18n="p3f2">E-commerce store</li>
+          <li data-i18n="p3f3">Payment integration</li>
+          <li data-i18n="p3f4">Product photography guide</li>
+          <li data-i18n="p3f5">Email marketing setup</li>
+          <li data-i18n="p3f6">6 months support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-outline" data-i18n="plan_cta">Get Started</a>
+      </div>
+    </div>
+
+    <!-- MONTHLY PACKAGES -->
+    <div class="pricing-panel" id="panelMonthly">
+      <div class="pricing-card reveal">
+        <span class="plan-badge" data-i18n="care1_badge">Basic</span>
+        <div class="plan-name" data-i18n="care1_name">Starter Care</div>
+        <div class="plan-price">8 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="care_period">per month</div>
+        <ul class="plan-features">
+          <li data-i18n="c1f1">Website hosting</li>
+          <li data-i18n="c1f2">Security updates</li>
+          <li data-i18n="c1f3">1 edit per month</li>
+          <li data-i18n="c1f4">Email support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-outline" data-i18n="plan_cta">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal" style="transition-delay:0.15s">
+        <div class="featured-label" data-i18n="most_popular">Most Popular</div>
+        <span class="plan-badge" data-i18n="care2_badge">Most Popular</span>
+        <div class="plan-name" data-i18n="care2_name">Standard Care</div>
+        <div class="plan-price">15 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="care_period">per month</div>
+        <ul class="plan-features">
+          <li data-i18n="c2f1">Website hosting</li>
+          <li data-i18n="c2f2">Security & software updates</li>
+          <li data-i18n="c2f3">Up to 3 edits per month</li>
+          <li data-i18n="c2f4">Monthly performance report</li>
+          <li data-i18n="c2f5">Priority email support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-solid" data-i18n="plan_cta">Get Started</a>
+      </div>
+      <div class="pricing-card reveal" style="transition-delay:0.3s">
+        <span class="plan-badge" data-i18n="care3_badge">Premium</span>
+        <div class="plan-name" data-i18n="care3_name">Premium Care</div>
+        <div class="plan-price">35 000<sup>Ft</sup></div>
+        <div class="plan-period" data-i18n="care_period">per month</div>
+        <ul class="plan-features">
+          <li data-i18n="c3f1">Website hosting</li>
+          <li data-i18n="c3f2">Security & software updates</li>
+          <li data-i18n="c3f3">Unlimited edits</li>
+          <li data-i18n="c3f4">SEO monitoring</li>
+          <li data-i18n="c3f5">Monthly analytics report</li>
+          <li data-i18n="c3f6">Priority support</li>
+        </ul>
+        <a data-scroll="contact" class="btn-plan btn-plan-outline" data-i18n="plan_cta">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center" data-i18n="testi_tag">Real Results</div>
+      <h2 data-i18n="testi_h2">Small businesses, big outcomes</h2>
+    </div>
+    <div class="testimonials-grid stagger">
+      <div class="testimonial reveal">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-i18n="testi1">I went from having no online presence to booking out three months in advance. The site pays for itself every week. I wish I'd done it sooner.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-biz">Meadow Lane Florals</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay:0.15s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-i18n="testi2">The whole process was quick and painless. They understood my business straight away and delivered something I'm genuinely proud to show clients.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-biz">Harrington Plumbing & Co.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay:0.3s">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-i18n="testi3">Our online orders doubled in the first month after launch. The team handled everything — I just had to show up for our calls. Outstanding value.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">L</div>
+          <div>
+            <div class="testimonial-name">Lisa T.</div>
+            <div class="testimonial-biz">The Batch Bakehouse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-label reveal" style="justify-content:center">Ready to grow?</div>
+    <h2 class="reveal" data-i18n="cta_h2">Let's build something <em style="font-style:italic;color:var(--rust)">great</em> together</h2>
+    <p class="reveal" data-i18n="cta_p">Book a free 30-minute call. No pressure, no pitch deck — just a real conversation about what your business needs.</p>
+    <div class="reveal">
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary" style="font-size:1rem;padding:1.1rem 2.8rem;border:none;cursor:pointer" data-i18n="cta_btn">Get In Touch →</button>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left reveal-left">
+        <div class="section-label" data-i18n="contact_tag">Kezdjük el együtt</div>
+        <h2 data-i18n="contact_h2">Meséljen a vállalkozásáról</h2>
+        <p data-i18n="contact_sub">Töltse ki az alábbi kérdőívet — ez segít nekünk pontosan megérteni, mire van szüksége, és hogyan tudunk a legjobban segíteni.</p>
+        <div class="contact-details stagger">
+          <div class="contact-detail">
+            <span class="contact-detail-icon">📧</span>
+            <div>
+              <span class="contact-detail-lbl" data-i18n="cd_email">Email</span>
+              <span class="contact-detail-val"><a href="mailto:flopage3@gmail.com">flopage3@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">📞</span>
+            <div>
+              <span class="contact-detail-lbl" data-i18n="cd_phone">Phone / WhatsApp</span>
+              <span class="contact-detail-val"><a href="tel:+1234567890">+1 (234) 567-890</a></span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">⚡</span>
+            <div>
+              <span class="contact-detail-lbl" data-i18n="cd_response">Response time</span>
+              <span class="contact-detail-val" data-i18n="cd_response_val">Within 1 business day</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">🌍</span>
+            <div>
+              <span class="contact-detail-lbl" data-i18n="cd_work">We work with</span>
+              <span class="contact-detail-val" data-i18n="cd_work_val">Businesses across Hungary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card reveal-right">
+        <!-- PROGRESS BAR -->
+        <div class="fp-progress">
+          <div class="fp-bar"><div class="fp-fill" id="fpFill"></div></div>
+          <div class="fp-steps">
+            <span class="fp-step active" data-p="1">1</span>
+            <span class="fp-step" data-p="2">2</span>
+            <span class="fp-step" data-p="3">3</span>
+            <span class="fp-step" data-p="4">4</span>
+          </div>
+        </div>
+
+        <!-- PAGE 1 -->
+        <div class="fpage active" id="fp1">
+          <h3 data-i18n="fp1_title">Page 1 of 4 <em>1/4</em></h3>
+          <p class="form-sub" data-i18n="fp1_sub">Meséljen a vállalkozásáról</p>
+          <div class="form-group">
+            <label data-i18n="f1_label">A cég neve *</label>
+            <input type="text" id="f_cegnev" placeholder="Pl. Kovács Kft." />
+          </div>
+          <div class="form-group">
+            <label data-i18n="f2_label">Email cím / Telefonszám *</label>
+            <input type="text" id="f_email" placeholder="Pl. info@ceg.hu / +36 30 123 4567" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="f3_label">Rendelkeznek weboldallal? *</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="weboldal" value="Igen"> Igen</label>
+              <label class="radio-label"><input type="radio" name="weboldal" value="Nem"> Nem</label>
+            </div>
+          </div>
+          <div class="fp-nav">
+            <span></span>
+            <button class="form-btn fp-next" data-page="1">Következő →</button>
+          </div>
+        </div>
+
+        <!-- PAGE 2 — Van weboldal -->
+        <div class="fpage" id="fp2">
+          <h3 data-i18n="fp2_title">Meglévő weboldal <em>2/4</em></h3>
+          <p class="form-sub" data-i18n="fp2_sub">Meglévő weboldaljuk részletei</p>
+          <div class="form-group">
+            <label data-i18n="f4_label">Ha igen, mi a weboldal címe?</label>
+            <input type="text" id="f_url" placeholder="Pl. www.cegem.hu" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="f5_label">Mikor készült a weboldal?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="mikor" value="0–2 éve"> 0–2 éve</label>
+              <label class="radio-label"><input type="radio" name="mikor" value="3–5 éve"> 3–5 éve</label>
+              <label class="radio-label"><input type="radio" name="mikor" value="5+ éve"> 5+ éve</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f6_label">Milyen problémákat tapasztalnak? (több is választható)</label>
+            <div class="checkbox-group" id="fg_prob">
+              <label class="check-label"><input type="checkbox" value="Elavult a dizájn"> Elavult a dizájn</label>
+              <label class="check-label"><input type="checkbox" value="Lassan tölt be"> Lassan tölt be</label>
+              <label class="check-label"><input type="checkbox" value="Nem mobilbarát"> Nem mobilbarát</label>
+              <label class="check-label"><input type="checkbox" value="Nehéz frissíteni/szerkeszteni"> Nehéz frissíteni/szerkeszteni</label>
+              <label class="check-label"><input type="checkbox" value="Nem jelenik meg Google-n"> Nem jelenik meg Google-n</label>
+              <label class="check-label"><input type="checkbox" value="Kevés látogató érkezik rá"> Kevés látogató érkezik rá</label>
+              <label class="check-label"><input type="checkbox" value="Nincs kapcsolatfelvételi űrlap"> Nincs kapcsolatfelvételi űrlap</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f7_label">Mi a legfontosabb céljuk a weboldalukkal?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="cel1" value="Új ügyfeleket szerezni"> Új ügyfeleket szerezni</label>
+              <label class="radio-label"><input type="radio" name="cel1" value="Bemutatkozni / hitelesség"> Bemutatkozni / hitelesség</label>
+              <label class="radio-label"><input type="radio" name="cel1" value="Termékeket/szolgáltatásokat értékesíteni"> Termékeket értékesíteni</label>
+              <label class="radio-label"><input type="radio" name="cel1" value="Időpontfoglalás"> Időpontfoglalás</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f8_label">Van Google-n megtalálható céges profiljuk?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="google" value="Van"> Van</label>
+              <label class="radio-label"><input type="radio" name="google" value="Nincs"> Nincs</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f9_label">Milyen gyorsan szeretnének változtatni?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="gyors" value="Azonnal"> Azonnal</label>
+              <label class="radio-label"><input type="radio" name="gyors" value="1–3 hónapon belül"> 1–3 hónapon belül</label>
+              <label class="radio-label"><input type="radio" name="gyors" value="Csak tájékozódunk"> Csak tájékozódunk</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f10_label">Van hozzávetőleges keretük weboldal fejlesztésre?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="budget1" value="100 000 HUF alatt"> 100 000 HUF alatt</label>
+              <label class="radio-label"><input type="radio" name="budget1" value="100 000–300 000 HUF"> 100 000–300 000 HUF</label>
+              <label class="radio-label"><input type="radio" name="budget1" value="300 000–700 000 HUF"> 300 000–700 000 HUF</label>
+              <label class="radio-label"><input type="radio" name="budget1" value="700 000 HUF felett"> 700 000 HUF felett</label>
+            </div>
+          </div>
+          <div class="fp-nav">
+            <button class="fp-back-btn" data-page="2">← Vissza</button>
+            <button class="form-btn fp-next" data-page="2">Következő →</button>
+          </div>
+        </div>
+
+        <!-- PAGE 3 — Nincs weboldal -->
+        <div class="fpage" id="fp3">
+          <h3 data-i18n="fp3_title">Új weboldal <em>3/4</em></h3>
+          <p class="form-sub" data-i18n="fp3_sub">Tervezett új weboldal részletei</p>
+          <div class="form-group">
+            <label data-i18n="f11_label">Mi lenne a weboldal fő célja?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="cel2" value="Új ügyfeleket szerezni"> Új ügyfeleket szerezni</label>
+              <label class="radio-label"><input type="radio" name="cel2" value="Bemutatkozni / hitelesség"> Bemutatkozni / hitelesség</label>
+              <label class="radio-label"><input type="radio" name="cel2" value="Termékeket/szolgáltatásokat értékesíteni"> Termékeket értékesíteni</label>
+              <label class="radio-label"><input type="radio" name="cel2" value="Időpontfoglalás"> Időpontfoglalás</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f12_label">Milyen funkciókat szeretnél a weboldalon? (több is választható)</label>
+            <div class="checkbox-group" id="fg_funk">
+              <label class="check-label"><input type="checkbox" value="Kapcsolatfelvételi űrlap"> Kapcsolatfelvételi űrlap</label>
+              <label class="check-label"><input type="checkbox" value="Webshop / fizetés"> Webshop / fizetés</label>
+              <label class="check-label"><input type="checkbox" value="Időpontfoglalás"> Időpontfoglalás</label>
+              <label class="check-label"><input type="checkbox" value="Blog / hírek"> Blog / hírek</label>
+              <label class="check-label"><input type="checkbox" value="Galéria / portfólió"> Galéria / portfólió</label>
+              <label class="check-label"><input type="checkbox" value="Többnyelvű oldal"> Többnyelvű oldal</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f13_label">Mikor szeretnéd, hogy elkészüljön a weboldal?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="hatarido" value="Minél előbb"> Minél előbb</label>
+              <label class="radio-label"><input type="radio" name="hatarido" value="1–2 hónapon belül"> 1–2 hónapon belül</label>
+              <label class="radio-label"><input type="radio" name="hatarido" value="Nincs határidő"> Nincs határidő</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="f14_label">Mi a tervezett büdzséd a weboldal elkészítésére?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="budget2" value="100 000 HUF alatt"> 100 000 HUF alatt</label>
+              <label class="radio-label"><input type="radio" name="budget2" value="100 000–300 000 HUF"> 100 000–300 000 HUF</label>
+              <label class="radio-label"><input type="radio" name="budget2" value="300 000–700 000 HUF"> 300 000–700 000 HUF</label>
+              <label class="radio-label"><input type="radio" name="budget2" value="700 000 HUF felett"> 700 000 HUF felett</label>
+            </div>
+          </div>
+          <div class="fp-nav">
+            <button class="fp-back-btn" data-page="3">← Vissza</button>
+            <button class="form-btn fp-next" data-page="3">Következő →</button>
+          </div>
+        </div>
+
+        <!-- PAGE 4 — Final -->
+        <div class="fpage" id="fp4">
+          <h3 data-i18n="fp4_title">Utolsó lépés <em>4/4</em></h3>
+          <p class="form-sub" data-i18n="fp4_sub">Majdnem kész!</p>
+          <div class="form-group">
+            <label data-i18n="f15_label">Van bármi más, amit fontosnak tartasz elmondani a projekttel kapcsolatban?</label>
+            <textarea id="f_egyeb" placeholder="Pl. különleges igények, határidők, ötletek..."></textarea>
+          </div>
+          <div class="fp-nav">
+            <button class="fp-back-btn" data-page="4">← Vissza</button>
+            <button class="form-btn" id="formBtn">Küldés →</button>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="form-success" id="formSuccess">
+          <span class="form-success-icon">🎉</span>
+          <h4 data-i18n="success_title">Köszönjük!</h4>
+          <p data-i18n="success_msg">Megkaptuk az üzenetet. 24 órán belül felvesszük Önnel a kapcsolatot!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a  class="nav-logo" style="color:var(--cream)">Flo<span>Page</span></a>
+        <p data-i18n="footer_desc">Beautiful, effective websites for small businesses. We make the web work for you — without the big agency fuss.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a >Web Design</a></li>
+          <li><a >Development</a></li>
+          <li><a >SEO</a></li>
+          <li><a >E-Commerce</a></li>
+          <li><a >Copywriting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_company">Company</h4>
+        <ul>
+          <li><button data-scroll="services" data-i18n="footer_services">Services</button></li>
+          <li><button data-scroll="process" data-i18n="footer_process">How It Works</button></li>
+          <li><button data-scroll="pricing" data-i18n="nav_pricing">Pricing</button></li>
+          <li><button data-scroll="contact" data-i18n="footer_contact_link">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="mailto:flopage3@gmail.com">flopage3@gmail.com</a></li>
+          <li><a >Book a Call</a></li>
+          <li><a href="https://www.instagram.com/flopage.agency?igsh=MW1qd3l4b3VkODE2Zg==" target="_blank">Instagram</a></li>
+          <li><a >LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FloPage All rights reserved.</p>
+      <p data-i18n="footer_made">Made with care for small business owners everywhere.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── NAV SCROLL & DROPDOWN ──
+    const nav = document.getElementById('nav');
+    const burger = document.getElementById('navBurger');
+    const dropdown = document.getElementById('navDropdown');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      // close dropdown on scroll
+      burger.classList.remove('open');
+      dropdown.classList.remove('open');
+    });
+
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      burger.classList.toggle('open');
+      dropdown.classList.toggle('open');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        burger.classList.remove('open');
+        dropdown.classList.remove('open');
+      }
+    });
+
+    // ── PRICING TOGGLE ──
+    const pricingToggle = document.getElementById('pricingToggle');
+    const panelOnce    = document.getElementById('panelOnce');
+    const panelMonthly = document.getElementById('panelMonthly');
+    const labelOnce    = document.getElementById('labelOnce');
+    const labelMonthly = document.getElementById('labelMonthly');
+
+    if (pricingToggle) {
+      pricingToggle.addEventListener('change', () => {
+        const isMonthly = pricingToggle.checked;
+        panelOnce.classList.toggle('active', !isMonthly);
+        panelMonthly.classList.toggle('active', isMonthly);
+        labelOnce.classList.toggle('active', !isMonthly);
+        labelMonthly.classList.toggle('active', isMonthly);
+        // Trigger reveal on newly shown cards
+        document.querySelectorAll('#panelMonthly .reveal, #panelOnce .reveal').forEach(el => {
+          el.classList.remove('visible');
+          setTimeout(() => el.classList.add('visible'), 50);
+        });
+      });
+    }
+
+    // ── SMOOTH SCROLL (no popup) ──
+    function smoothScrollTo(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const navH = nav.getBoundingClientRect().height;
+      const top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    document.querySelectorAll('[data-scroll]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        burger.classList.remove('open');
+        dropdown.classList.remove('open');
+        smoothScrollTo(el.dataset.scroll);
+      });
+    });
+
+    // ── SCROLL REVEAL (all variants) ──
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger, .stat').forEach(el => revealObs.observe(el));
+
+    // ── LANGUAGE SWITCHER ──
+    const T = {
+      en: {
+        // Hero
+        hero_eyebrow: 'Web Design for Small Business',
+        hero_h1: 'Your business deserves a site that works',
+        hero_sub: "We're a two-person web design studio based in Szeged. We build beautiful, professional websites that help small businesses stand out, get found on Google, and turn visitors into customers.",
+        hero_cta1: 'See Packages', hero_cta2: 'How it works →',
+        // Services
+        services_tag: 'What We Do',
+        services_h2: 'Everything your site needs to succeed',
+        services_sub: 'We handle the whole thing — from design and copywriting to launch and beyond — so you can focus on running your business.',
+        svc1_title: 'Custom Web Design', svc1_desc: "Unique designs built around your brand and customers — never a generic template that looks like everyone else's.",
+        svc2_title: 'Mobile-First Development', svc2_desc: 'Over 60% of customers visit on mobile. Your site will look and perform perfectly on every screen size.',
+        svc3_title: 'SEO Foundations', svc3_desc: 'Built from the ground up to rank on Google — page speed, metadata, structured data, and local SEO included.',
+        svc4_title: 'E-Commerce Setup', svc4_desc: 'Sell your products or services online with a clean, easy-to-manage store customers will love to buy from.',
+        svc5_title: 'Copywriting', svc5_desc: 'Words that actually convert. We write clear, compelling copy that speaks to your ideal customer.',
+        svc6_title: 'Ongoing Maintenance', svc6_desc: "We don't disappear after launch. Updates, edits, and support — whenever you need it, we're here.",
+        // Process
+        process_tag: 'How It Works', process_h2: 'From idea to live in four steps',
+        step1_title: 'Discovery Call', step1_desc: 'We chat about your business, goals, and customers — just a simple conversation.',
+        step2_title: 'Design & Content', step2_desc: "We design your site and write the copy. You review and give feedback — it's collaborative.",
+        step3_title: 'Build & Test', step3_desc: 'We develop the site and test everything — speed, mobile, forms, links. No surprises.',
+        step4_title: 'Launch & Support', step4_desc: 'Your site goes live. We stick around for training, edits, and ongoing support.',
+        // Pricing
+        pricing_tag: 'Transparent Pricing', pricing_h2: 'Simple packages, no surprises',
+        pricing_sub: 'All packages include design, development, copywriting & launch.',
+        plan1_badge: 'Starter', plan1_name: 'Launchpad',
+        plan2_badge: 'Growth', plan2_name: 'Professional',
+        plan3_badge: 'Full Service', plan3_name: 'Commerce',
+        plan_period: 'one-time payment', plan_cta: 'Get Started',
+        // Testimonials
+        testi_tag: 'Real Results', testi_h2: 'Small businesses, big outcomes',
+        testi1: "I went from having no online presence to booking out three months in advance. The site pays for itself every week. I wish I'd done it sooner.",
+        testi2: "The whole process was quick and painless. They understood my business straight away and delivered something I'm genuinely proud to show clients.",
+        testi3: 'Our online orders doubled in the first month after launch. The team handled everything — I just had to show up for our calls. Outstanding value.',
+        testi1_biz: 'Meadow Lane Florals', testi2_biz: 'Harrington Plumbing & Co.', testi3_biz: 'The Batch Bakehouse',
+        // CTA
+        cta_h2: "Let's build something great together",
+        cta_p: 'Book a free 30-minute call. No pressure, no pitch deck — just a real conversation about what your business needs.',
+        cta_btn: 'Get In Touch →',
+        // Contact
+        contact_tag: 'Start a Project', contact_h2: 'Tell us about your business',
+        contact_sub: 'Fill in the questionnaire below — this helps us understand exactly what you need and how we can best help you.',
+        cd_email: 'Email', cd_phone: 'Phone / WhatsApp',
+        cd_response: 'Response time', cd_response_val: 'Within 1 business day',
+        cd_work: 'We work with', cd_work_val: 'Businesses across Hungary',
+        // Form
+        form_title: 'Send us a message', form_sub: "We'll reply within 24 hours",
+        fp1_title: 'About You', fp1_sub: 'Tell us about your business',
+        f1_label: 'Company name *', f2_label: 'Email / Phone number *',
+        f3_label: 'Do you currently have a website? *',
+        fp2_title: 'Existing Website', fp2_sub: 'Details about your current site',
+        f4_label: 'What is your website address?',
+        f5_label: 'When was the website made?',
+        f6_label: 'What problems do you experience? (multiple choice)',
+        f7_label: 'What is your main goal with the website?',
+        f8_label: 'Do you have a Google Business Profile?',
+        f9_label: 'How quickly would you like to make changes?',
+        f10_label: 'Do you have an approximate budget for web development?',
+        fp3_title: 'New Website', fp3_sub: 'Details for your planned website',
+        f11_label: 'What would be the main goal of the website?',
+        f12_label: 'What features would you like? (multiple choice)',
+        f13_label: 'When would you like the website to be ready?',
+        f14_label: 'What is your planned budget?',
+        fp4_title: 'Final Step', fp4_sub: 'Almost done!',
+        f15_label: 'Is there anything else important you would like to tell us about the project?',
+        btn_next: 'Next →', btn_back: '← Back', btn_send: 'Send →',
+        success_title: 'Thank you!', success_msg: "We've received your message. We'll be in touch within 24 hours!",
+        // Nav & Footer
+        nav_services: 'Services', nav_process: 'Process',
+        nav_pricing: 'Pricing', nav_care: 'Care Plans', nav_care_desc: 'Monthly hosting & support', nav_contact: 'Contact Us',
+        footer_desc: 'Beautiful, effective websites for small businesses. We make the web work for you — without the big agency fuss.',
+        footer_made: 'Made with care for small business owners everywhere.',
+        footer_company: 'Company', footer_services: 'Services', footer_process: 'How It Works', footer_contact_link: 'Contact',
+        // Care plans
+        care_tag: 'Monthly Care Plans', care_h2: 'Keep your site', care_h2em: 'running perfectly',
+        care_intro: 'After launch, we stay by your side. Hosting, updates, edits and support — every month, without the hassle.',
+        care1_badge: 'Basic', care1_name: 'Starter Care',
+        care2_badge: 'Most Popular', care2_name: 'Standard Care',
+        care3_badge: 'Premium', care3_name: 'Premium Care',
+        care_period: 'per month', care_cta: 'Get Started',
+        c1f1: 'Website hosting', c1f2: 'Security updates', c1f3: '1 edit per month', c1f4: 'Email support',
+        c2f1: 'Website hosting', c2f2: 'Security & software updates', c2f3: 'Up to 3 edits per month', c2f4: 'Monthly performance report', c2f5: 'Priority email support',
+        c3f1: 'Website hosting', c3f2: 'Security & software updates', c3f3: 'Unlimited edits', c3f4: 'SEO monitoring', c3f5: 'Monthly analytics report', c3f6: 'Priority support',
+        care_note: 'All plans include a free first month — so you can see the value before committing.',
+        toggle_once: 'One-time', toggle_monthly: 'Monthly', toggle_save: '+ Care included',
+        // Pricing features
+        most_popular: 'Most Popular',
+        stat1_lbl: 'Small businesses launched', stat2_num: '7 days', stat2_lbl: 'Average delivery time', stat3_lbl: 'Client satisfaction rate',
+        p1f1: 'Up to 5 pages', p1f2: 'Custom design', p1f3: 'Mobile optimized',
+        p1f4: 'Basic SEO setup', p1f5: 'Contact form', p1f6: '30-day support',
+        p2f1: 'Up to 12 pages', p2f2: 'Custom design + branding', p2f3: 'Full copywriting',
+        p2f4: 'Advanced SEO', p2f5: 'Blog setup', p2f6: 'Google Analytics', p2f7: '3 months support',
+        p3f1: 'Unlimited pages', p3f2: 'E-commerce store', p3f3: 'Payment integration',
+        p3f4: 'Product photography guide', p3f5: 'Email marketing setup', p3f6: '6 months support',
+      },
+      hu: {
+        // Főoldal
+        hero_eyebrow: 'Weboldal kis- és középvállalkozásoknak',
+        hero_h1: 'Vállalkozása megérdemel egy igazán hatékony weboldalt',
+        hero_sub: 'Ketten vagyunk, egy szegedi webdesign stúdió. Gyönyörű, professzionális weboldalakat készítünk, amelyek segítenek a kis vállalkozásoknak kitűnni, megtalálhatóvá válni a Google-n és több ügyfelet szerezni.',
+        hero_cta1: 'Csomagok megtekintése', hero_cta2: 'Hogyan működik →',
+        // Szolgáltatások
+        services_tag: 'Mit csinálunk',
+        services_h2: 'Minden, amire weboldalának szüksége van',
+        services_sub: 'Mindent mi intézünk — a tervezéstől és szövegíráson át az indításig — hogy Ön a vállalkozására összpontosíthasson.',
+        svc1_title: 'Egyedi webdesign', svc1_desc: 'Az Ön márkája és ügyfelei köré épített egyedi dizájnok — nem sablonok, amelyek ugyanúgy néznek ki, mint mindenki másé.',
+        svc2_title: 'Mobilbarát fejlesztés', svc2_desc: 'A látogatók több mint 60%-a mobilról érkezik. Weboldalunk tökéletesen néz ki és működik minden képernyőméreten.',
+        svc3_title: 'SEO alapok', svc3_desc: 'A Google-n való megjelenésre tervezve — oldalsebesség, metaadatok, strukturált adatok és helyi SEO mind beleértve.',
+        svc4_title: 'Webshop kialakítás', svc4_desc: 'Értékesítse termékeit vagy szolgáltatásait online egy letisztult, könnyen kezelhető webshoppal.',
+        svc5_title: 'Szövegírás', svc5_desc: 'Szövegek, amelyek valóban konvertálnak. Egyértelmű, meggyőző szöveget írunk, amely megszólítja az ideális ügyfelét.',
+        svc6_title: 'Folyamatos karbantartás', svc6_desc: 'Az indítás után sem tűnünk el. Frissítések, szerkesztések és support — amikor csak szüksége van rá.',
+        // Folyamat
+        process_tag: 'Hogyan működik', process_h2: 'Ötlettől az élő weboldalig négy lépésben',
+        step1_title: 'Felfedező beszélgetés', step1_desc: 'Beszélgetünk a vállalkozásáról, céljairól és ügyfeleiről — csak egy egyszerű párbeszéd.',
+        step2_title: 'Dizájn és tartalom', step2_desc: 'Megtervezzük az oldalt és megírjuk a szövegeket. Ön visszajelzést ad — ez egy közös folyamat.',
+        step3_title: 'Fejlesztés és tesztelés', step3_desc: 'Fejlesztjük az oldalt és mindent tesztelünk — sebességet, mobilos megjelenést, űrlapokat, linkeket. Meglepetések nélkül.',
+        step4_title: 'Indítás és support', step4_desc: 'Az oldal élesbe kerül. Maradunk az oktatáshoz, szerkesztésekhez és folyamatos supporthoz.',
+        // Árazás
+        pricing_tag: 'Átlátható árazás', pricing_h2: 'Egyszerű csomagok, meglepetések nélkül',
+        pricing_sub: 'Minden csomag tartalmazza a dizájnt, fejlesztést, szövegírást és az indítást.',
+        plan1_badge: 'Alap', plan1_name: 'Launchpad',
+        plan2_badge: 'Növekedési', plan2_name: 'Professzionális',
+        plan3_badge: 'Teljes körű', plan3_name: 'Commerce',
+        plan_period: 'egyszeri díj', plan_cta: 'Érdekel',
+        // Vélemények
+        testi_tag: 'Valós eredmények', testi_h2: 'Kis vállalkozások, nagy sikerek',
+        testi1: 'Úgy mentem bele, hogy semmiféle online jelenlétünk nem volt, és most három hónapra előre tele vagyunk foglalásokkal. Az oldal minden héten megtéríti az árát.',
+        testi2: 'Az egész folyamat gyors és fájdalommentes volt. Azonnal megértették a vállalkozásomat, és olyasmit szállítottak, amire büszkén megmutatom az ügyfeleknek.',
+        testi3: 'Az indítás utáni első hónapban megduplázódtak az online rendeléseink. A csapat mindent intézett — csak meg kellett jelennem a meetingeken. Kiváló érték.',
+        testi1_biz: 'Meadow Lane Virágüzlet', testi2_biz: 'Harrington Vízszerelés Kft.', testi3_biz: 'The Batch Pékség',
+        // CTA
+        cta_h2: 'Építsünk valami nagyszerűt együtt',
+        cta_p: 'Foglaljon egy ingyenes 30 perces konzultációt. Nyomás nélkül — csak egy őszinte beszélgetés arról, mire van szüksége.',
+        cta_btn: 'Kapcsolatfelvétel →',
+        // Kapcsolat
+        contact_tag: 'Projekt indítása', contact_h2: 'Meséljen a vállalkozásáról',
+        contact_sub: 'Töltse ki az alábbi kérdőívet — ez segít nekünk pontosan megérteni, mire van szüksége, és hogyan tudunk a legjobban segíteni.',
+        cd_email: 'Email', cd_phone: 'Telefon / WhatsApp',
+        cd_response: 'Válaszidő', cd_response_val: '1 munkanapon belül',
+        cd_work: 'Kivel dolgozunk', cd_work_val: 'Vállalkozások egész Magyarországon',
+        // Űrlap
+        form_title: 'Küldjön üzenetet', form_sub: '24 órán belül válaszolunk',
+        fp1_title: 'Rólatok', fp1_sub: 'Meséljetek a vállalkozásotokról',
+        f1_label: 'A cég neve *', f2_label: 'Email cím / Telefonszám *',
+        f3_label: 'Rendelkeznek weboldallal? *',
+        fp2_title: 'Meglévő weboldal', fp2_sub: 'A jelenlegi weboldal részletei',
+        f4_label: 'Mi a weboldal címe?',
+        f5_label: 'Mikor készült a weboldal?',
+        f6_label: 'Milyen problémákat tapasztalnak? (több is választható)',
+        f7_label: 'Mi a legfontosabb céljuk a weboldalukkal?',
+        f8_label: 'Van Google-n megtalálható céges profiljuk?',
+        f9_label: 'Milyen gyorsan szeretnének változtatni?',
+        f10_label: 'Van hozzávetőleges keretük weboldal fejlesztésre?',
+        fp3_title: 'Új weboldal', fp3_sub: 'A tervezett weboldal részletei',
+        f11_label: 'Mi lenne a weboldal fő célja?',
+        f12_label: 'Milyen funkciókat szeretnél a weboldalon? (több is választható)',
+        f13_label: 'Mikor szeretnéd, hogy elkészüljön a weboldal?',
+        f14_label: 'Mi a tervezett büdzséd a weboldal elkészítésére?',
+        fp4_title: 'Utolsó lépés', fp4_sub: 'Majdnem kész!',
+        f15_label: 'Van bármi más, amit fontosnak tartasz elmondani a projekttel kapcsolatban?',
+        btn_next: 'Következő →', btn_back: '← Vissza', btn_send: 'Küldés →',
+        success_title: 'Köszönjük!', success_msg: 'Megkaptuk az üzenetet. 24 órán belül felvesszük Önnel a kapcsolatot!',
+        // Navigáció és lábléc
+        nav_services: 'Szolgáltatások', nav_process: 'Folyamat',
+        nav_pricing: 'Árazás', nav_care: 'Karbantartás', nav_care_desc: 'Havi tárhely és support', nav_contact: 'Kapcsolat',
+        footer_desc: 'Gyönyörű, hatékony weboldalak kis vállalkozásoknak. Mi intézzük a webet — a nagy ügynökségi bonyodalmak nélkül.',
+        footer_made: 'Szeretettel készítve kis vállalkozástulajdonosoknak.',
+        footer_company: 'Cég', footer_services: 'Szolgáltatások', footer_process: 'Hogyan működik', footer_contact_link: 'Kapcsolat',
+        // Karbantartási csomagok
+        care_tag: 'Havi Karbantartási Csomagok', care_h2: 'Tartsa weboldalát', care_h2em: 'tökéletes állapotban',
+        care_intro: 'Az indítás után is mellette maradunk. Tárhely, frissítések, szerkesztések és support — minden hónapban, gond nélkül.',
+        care1_badge: 'Alap', care1_name: 'Alap Csomag',
+        care2_badge: 'Legnépszerűbb', care2_name: 'Standard Csomag',
+        care3_badge: 'Prémium', care3_name: 'Prémium Csomag',
+        care_period: 'havonta', care_cta: 'Érdekel',
+        c1f1: 'Webtárhely', c1f2: 'Biztonsági frissítések', c1f3: 'Havi 1 szerkesztés', c1f4: 'Email support',
+        c2f1: 'Webtárhely', c2f2: 'Biztonsági és szoftveres frissítések', c2f3: 'Havi 3 szerkesztés', c2f4: 'Havi teljesítményjelentés', c2f5: 'Elsőbbségi email support',
+        c3f1: 'Webtárhely', c3f2: 'Biztonsági és szoftveres frissítések', c3f3: 'Korlátlan szerkesztés', c3f4: 'SEO monitorozás', c3f5: 'Havi analitikai jelentés', c3f6: 'Elsőbbségi support',
+        care_note: 'Minden csomag tartalmaz egy ingyenes első hónapot — hogy meggyőződhessen az értékéről.',
+        toggle_once: 'Egyszeri', toggle_monthly: 'Havi', toggle_save: '+ Karbantartás benne',
+        // Csomag jellemzők
+        most_popular: 'Legnépszerűbb',
+        stat1_lbl: 'Elindított kisvállalkozás', stat2_num: '7 nap', stat2_lbl: 'Átlagos elkészítési idő', stat3_lbl: 'Ügyfél-elégedettségi arány',
+        p1f1: 'Legfeljebb 5 aloldal', p1f2: 'Egyedi dizájn', p1f3: 'Mobilbarát megjelenés',
+        p1f4: 'Alap SEO beállítás', p1f5: 'Kapcsolatfelvételi űrlap', p1f6: '30 napos support',
+        p2f1: 'Legfeljebb 12 aloldal', p2f2: 'Egyedi dizájn + arculat', p2f3: 'Teljes szövegírás',
+        p2f4: 'Haladó SEO', p2f5: 'Blog kialakítás', p2f6: 'Google Analytics', p2f7: '3 hónapos support',
+        p3f1: 'Korlátlan aloldal', p3f2: 'Webshop kialakítás', p3f3: 'Fizetési integráció',
+        p3f4: 'Termékfotózási útmutató', p3f5: 'Email marketing beállítás', p3f6: '6 hónapos support',
+      }
+    }
+    let currentLang = 'en';
+
+    function applyLang(lang) {
+      const dict = T[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] === undefined) return;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = dict[key];
+        } else if (el.tagName === 'BUTTON' || el.tagName === 'A') {
+          el.textContent = dict[key];
+        } else if (key === 'hero_h1') {
+          // Special handling for h1 — highlight key word in rust
+          const text = dict[key];
+          const highlight = lang === 'en' ? 'deserves' : 'megérdemel';
+          el.innerHTML = text.replace(highlight, `<em style="color:var(--rust);font-style:italic">${highlight}</em>`);
+        } else {
+          el.textContent = dict[key];
+        }
+      });
+      // Translate form buttons (they have both data-i18n and other attrs)
+      document.querySelectorAll('.fp-next').forEach(btn => {
+        btn.textContent = dict['btn_next'] || 'Next →';
+      });
+      document.querySelectorAll('.fp-back-btn').forEach(btn => {
+        btn.textContent = dict['btn_back'] || '← Back';
+      });
+      const sendBtn = document.getElementById('formBtn');
+      if (sendBtn) sendBtn.textContent = dict['btn_send'] || 'Send →';
+      // Translate radio/checkbox options
+      const radioMap = {
+        en: { 'Igen': 'Yes', 'Nem': 'No', 'Van': 'Yes', 'Nincs': 'No',
+              '0–2 éve': '0–2 years ago', '3–5 éve': '3–5 years ago', '5+ éve': '5+ years ago',
+              'Elavult a dizájn': 'Outdated design', 'Lassan tölt be': 'Slow loading',
+              'Nem mobilbarát': 'Not mobile-friendly', 'Nehéz frissíteni/szerkeszteni': 'Hard to update/edit',
+              'Nem jelenik meg Google-n': "Doesn't appear on Google", 'Kevés látogató érkezik rá': 'Low traffic',
+              'Nincs kapcsolatfelvételi űrlap': 'No contact form',
+              'Új ügyfeleket szerezni': 'Get new clients', 'Bemutatkozni / hitelesség': 'Showcase / credibility',
+              'Termékeket/szolgáltatásokat értékesíteni': 'Sell products/services', 'Időpontfoglalás': 'Appointment booking',
+              'Azonnal': 'As soon as possible', '1–3 hónapon belül': 'Within 1–3 months', 'Csak tájékozódunk': 'Just exploring',
+              '100 000 HUF alatt': 'Under 100,000 HUF', '100 000–300 000 HUF': '100,000–300,000 HUF',
+              '300 000–700 000 HUF': '300,000–700,000 HUF', '700 000 HUF felett': 'Over 700,000 HUF',
+              'Kapcsolatfelvételi űrlap': 'Contact form', 'Webshop / fizetés': 'Webshop / payment',
+              'Blog / hírek': 'Blog / news', 'Galéria / portfólió': 'Gallery / portfolio', 'Többnyelvű oldal': 'Multilingual site',
+              'Minél előbb': 'As soon as possible', '1–2 hónapon belül': 'Within 1–2 months', 'Nincs határidő': 'No deadline',
+              'Épül': 'Being built',
+        },
+        hu: { 'Yes': 'Igen', 'No': 'Nem',
+              '0–2 years ago': '0–2 éve', '3–5 years ago': '3–5 éve', '5+ years ago': '5+ éve',
+              'Outdated design': 'Elavult a dizájn', 'Slow loading': 'Lassan tölt be',
+              'Not mobile-friendly': 'Nem mobilbarát', 'Hard to update/edit': 'Nehéz frissíteni/szerkeszteni',
+              "Doesn't appear on Google": 'Nem jelenik meg Google-n', 'Low traffic': 'Kevés látogató érkezik rá',
+              'No contact form': 'Nincs kapcsolatfelvételi űrlap',
+              'Get new clients': 'Új ügyfeleket szerezni', 'Showcase / credibility': 'Bemutatkozni / hitelesség',
+              'Sell products/services': 'Termékeket/szolgáltatásokat értékesíteni', 'Appointment booking': 'Időpontfoglalás',
+              'As soon as possible': 'Azonnal', 'Within 1–3 months': '1–3 hónapon belül', 'Just exploring': 'Csak tájékozódunk',
+              'Under 100,000 HUF': '100 000 HUF alatt', '100,000–300,000 HUF': '100 000–300 000 HUF',
+              '300,000–700,000 HUF': '300 000–700 000 HUF', 'Over 700,000 HUF': '700 000 HUF felett',
+              'Contact form': 'Kapcsolatfelvételi űrlap', 'Webshop / payment': 'Webshop / fizetés',
+              'Blog / news': 'Blog / hírek', 'Gallery / portfolio': 'Galéria / portfólió', 'Multilingual site': 'Többnyelvű oldal',
+              'Within 1–2 months': '1–2 hónapon belül', 'No deadline': 'Nincs határidő', 'Being built': 'Épül',
+        }
+      };
+      // Translate radio and checkbox labels
+      document.querySelectorAll('.radio-label, .check-label').forEach(label => {
+        const input = label.querySelector('input');
+        if (!input) return;
+        const currentVal = input.value;
+        const map = radioMap[lang];
+        if (map && map[currentVal]) {
+          // Update display text (the text node after the input)
+          const textNodes = [...label.childNodes].filter(n => n.nodeType === 3);
+          if (textNodes.length) textNodes[textNodes.length-1].textContent = ' ' + map[currentVal];
+          // Update the actual value too so form submits correctly
+          input.value = map[currentVal];
+        }
+      });
+      // Update ticker items
+      initTicker(lang);
+      // Update placeholder texts
+      const placeholders = {
+        en: { 'f_cegnev': 'e.g. Smith & Co.', 'f_email': 'e.g. info@company.com / +36 30 123 4567', 'f_url': 'e.g. www.mycompany.com', 'f_egyeb': 'e.g. special requirements, deadlines, ideas...' },
+        hu: { 'f_cegnev': 'Pl. Kovács Kft.', 'f_email': 'Pl. info@ceg.hu / +36 30 123 4567', 'f_url': 'Pl. www.cegem.hu', 'f_egyeb': 'Pl. különleges igények, határidők, ötletek...' }
+      };
+      Object.entries(placeholders[lang] || {}).forEach(([id, ph]) => {
+        const el = document.getElementById(id);
+        if (el) el.placeholder = ph;
+      });
+    }
+
+    function switchLang(lang) {
+      if (lang === currentLang) return;
+      currentLang = lang;
+      const pill = document.getElementById('langPill');
+      const btnEn = document.getElementById('btnEn');
+      const btnHu = document.getElementById('btnHu');
+      const activeBtn = lang === 'en' ? btnEn : btnHu;
+      const inactiveBtn = lang === 'en' ? btnHu : btnEn;
+      pill.style.width = activeBtn.offsetWidth + 'px';
+      pill.style.transform = lang === 'en' ? 'translateX(0)' : `translateX(${btnEn.offsetWidth + 2}px)`;
+      activeBtn.classList.add('active');
+      inactiveBtn.classList.remove('active');
+      document.body.classList.add('lang-switching');
+      setTimeout(() => { applyLang(lang); document.body.classList.remove('lang-switching'); }, 150);
+    }
+
+    function initPill() {
+      const btnEn = document.getElementById('btnEn');
+      const pill = document.getElementById('langPill');
+      if (btnEn && pill) { pill.style.width = btnEn.offsetWidth + 'px'; pill.style.transform = 'translateX(0)'; }
+    }
+
+    document.getElementById('btnEn').addEventListener('click', () => switchLang('en'));
+    document.getElementById('btnHu').addEventListener('click', () => switchLang('hu'));
+    function initTicker(lang) {
+      const tickerItemsMap = {
+        en: ['Custom Design','Based in Szeged','Mobile Optimized','SEO Ready','Fast Delivery','No Templates','Ongoing Support','Two-Person Studio'],
+        hu: ['Egyedi Dizájn','Szegeden vagyunk','Mobilbarát','SEO Optimalizált','Gyors Elkészítés','Nincs Sablon','Folyamatos Support','Kétfős Stúdió']
+      };
+      const items = tickerItemsMap[lang] || tickerItemsMap.en;
+      const tickerInner = document.getElementById('ticker');
+      if (!tickerInner) return;
+      tickerInner.innerHTML = [...items, ...items].map(item =>
+        `<span class="ticker-item"><span class="ticker-dot"></span> ${item}</span>`
+      ).join('\n');
+      tickerInner.style.animation = 'none';
+      tickerInner.offsetHeight;
+      tickerInner.style.animation = '';
+    }
+
+    window.addEventListener('load', () => {
+      initPill();
+      initTicker('en');
+      applyLang('en');
+    });
+    setTimeout(initPill, 100);
+
+    // ── MULTI-PAGE FORM ──
+    const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScuKcFQqKtkqXZJ0K2BsR07i_llKIX3UeRowNzXa41InMg4hQ/formResponse';
+    let currentPage = 1;
+    const totalPages = 4;
+
+    function getRadio(name) {
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : '';
+    }
+    function getChecks(groupId) {
+      return [...document.querySelectorAll(`#${groupId} input:checked`)].map(e => e.value).join(', ');
+    }
+
+    function goToPage(n) {
+      document.querySelectorAll('.fpage').forEach(p => p.classList.remove('active'));
+      document.getElementById('fp' + n).classList.add('active');
+      currentPage = n;
+
+      // Progress bar
+      document.getElementById('fpFill').style.width = (n / totalPages * 100) + '%';
+      document.querySelectorAll('.fp-step').forEach((s, i) => {
+        s.classList.remove('active','done');
+        if (i + 1 === n) s.classList.add('active');
+        else if (i + 1 < n) s.classList.add('done');
+      });
+
+      // Scroll to form
+      document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // Track which path they took (yes=page2, no=page3)
+    let camefrom = null;
+
+    // Next buttons
+    document.querySelectorAll('.fp-next').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const page = parseInt(btn.dataset.page);
+
+        if (page === 1) {
+          // Validate required fields
+          const name = document.getElementById('f_cegnev').value.trim();
+          const contact = document.getElementById('f_email').value.trim();
+          const web = getRadio('weboldal');
+
+          let valid = true;
+          [document.getElementById('f_cegnev'), document.getElementById('f_email')].forEach(el => {
+            if (!el.value.trim()) {
+              valid = false;
+              el.style.borderColor = '#d4420a';
+              el.style.animation = 'shake 0.4s ease';
+              setTimeout(() => { el.style.animation=''; el.style.borderColor=''; }, 600);
+            }
+          });
+          if (!web) {
+            valid = false;
+            document.querySelector('.radio-group').style.outline = '2px solid #d4420a';
+            setTimeout(() => { document.querySelector('.radio-group').style.outline = ''; }, 1500);
+          }
+          if (!valid) return;
+
+          // Smart routing based on yes/no
+          if (web === 'Igen') {
+            camefrom = 2;
+            goToPage(2); // Has website → page 2
+          } else {
+            camefrom = 3;
+            goToPage(3); // No website → page 3
+          }
+          return;
+        }
+
+        // Page 2 or 3 → go to page 4
+        goToPage(4);
+      });
+    });
+
+    // Back buttons — smart routing back to page 1
+    document.querySelectorAll('.fp-back-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const page = parseInt(btn.dataset.page);
+        if (page === 2 || page === 3) {
+          goToPage(1); // Always back to page 1 from page 2 or 3
+        } else if (page === 4) {
+          goToPage(camefrom || 2); // Back to whichever branch they came from
+        } else {
+          goToPage(page - 1);
+        }
+      });
+    });
+
+    // Submit
+    document.getElementById('formBtn').addEventListener('click', async () => {
+      const btn = document.getElementById('formBtn');
+      btn.textContent = currentLang === 'hu' ? 'Küldés...' : 'Sending...';
+      btn.style.opacity='0.7'; btn.disabled=true;
+
+      // Collect all answers into a readable format
+      const cegnev   = document.getElementById('f_cegnev').value;
+      const email    = document.getElementById('f_email').value;
+      const weboldal = getRadio('weboldal');
+      const url      = document.getElementById('f_url').value;
+      const mikor    = getRadio('mikor');
+      const prob     = getChecks('fg_prob');
+      const cel1     = getRadio('cel1');
+      const google   = getRadio('google');
+      const gyors    = getRadio('gyors');
+      const budget1  = getRadio('budget1');
+      const cel2     = getRadio('cel2');
+      const funk     = getChecks('fg_funk');
+      const hatarido = getRadio('hatarido');
+      const budget2  = getRadio('budget2');
+      const egyeb    = document.getElementById('f_egyeb').value;
+
+      // Build readable message
+      const message = `
+ÚJ ÜGYFÉL ÉRDEKLŐDÉS — FloPage
+
+📋 ALAPADATOK
+Cég neve: ${cegnev}
+Email / Telefon: ${email}
+Van weboldala: ${weboldal}
+
+🌐 MEGLÉVŐ WEBOLDAL
+Weboldal URL: ${url || '—'}
+Mikor készült: ${mikor || '—'}
+Problémák: ${prob || '—'}
+Fő cél: ${cel1 || '—'}
+Google profil: ${google || '—'}
+Változtatás ideje: ${gyors || '—'}
+Büdzsé: ${budget1 || '—'}
+
+✨ ÚJ WEBOLDAL
+Fő cél: ${cel2 || '—'}
+Funkciók: ${funk || '—'}
+Határidő: ${hatarido || '—'}
+Büdzsé: ${budget2 || '—'}
+
+💬 EGYÉB
+${egyeb || '—'}
+      `.trim();
+
+      const fd = new FormData();
+      fd.append('_subject', `Új érdeklődés: ${cegnev}`);
+      fd.append('_captcha', 'false');
+      fd.append('_template', 'table');
+      fd.append('Cég neve', cegnev);
+      fd.append('Email / Telefon', email);
+      fd.append('Van weboldala?', weboldal);
+      fd.append('Weboldal URL', url || '—');
+      fd.append('Mikor készült?', mikor || '—');
+      fd.append('Problémák', prob || '—');
+      fd.append('Fő cél (meglévő)', cel1 || '—');
+      fd.append('Google profil', google || '—');
+      fd.append('Változtatás ideje', gyors || '—');
+      fd.append('Büdzsé (meglévő)', budget1 || '—');
+      fd.append('Fő cél (új)', cel2 || '—');
+      fd.append('Funkciók', funk || '—');
+      fd.append('Határidő', hatarido || '—');
+      fd.append('Büdzsé (új)', budget2 || '—');
+      fd.append('Egyéb megjegyzés', egyeb || '—');
+
+      // Submit to Google Forms using hidden iframe — no redirect
+      const hiddenForm = document.createElement('form');
+      hiddenForm.method = 'POST';
+      hiddenForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScuKcFQqKtkqXZJ0K2BsR07i_llKIX3UeRowNzXa41InMg4hQ/formResponse';
+      hiddenForm.target = 'gform_iframe';
+      hiddenForm.style.display = 'none';
+
+      const addField = (name, val) => {
+        const el = document.createElement('input');
+        el.type = 'hidden'; el.name = name; el.value = val || '';
+        hiddenForm.appendChild(el);
+      };
+
+      // Page 1
+      addField('entry.904003191',  cegnev);
+      addField('entry.1620090346', email);
+      addField('entry.120120643',  weboldal);
+
+      // Page 2 — existing website
+      addField('entry.1549352235', url);
+      addField('entry.469139611',  mikor);
+      // Checkboxes — append each selected value separately
+      if (prob) prob.split(', ').forEach(v => addField('entry.604939359', v));
+      addField('entry.1898955872', cel1);
+      addField('entry.149002025',  google);
+      addField('entry.1274859212', gyors);
+      addField('entry.1698224534', budget1);
+
+      // Page 3 — new website
+      addField('entry.1082873011', cel2);
+      // Checkboxes
+      if (funk) funk.split(', ').forEach(v => addField('entry.1204324491', v));
+      addField('entry.1437659050', hatarido);
+      addField('entry.82197241',   budget2);
+
+      // Page 4
+      addField('entry.1275395530', egyeb);
+
+      // Hidden iframe so page doesn't redirect
+      let iframe = document.getElementById('gform_iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'gform_iframe';
+        iframe.id = 'gform_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      document.body.appendChild(hiddenForm);
+      hiddenForm.submit();
+      document.body.removeChild(hiddenForm);
+
+      // Show success
+      setTimeout(() => {
+        document.getElementById('fp4').style.display = 'none';
+        document.querySelector('.fp-progress').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 800);
+    });
+  </script>
+</body>
+</html>
